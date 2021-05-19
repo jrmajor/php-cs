@@ -150,7 +150,7 @@ return [
     'phpdoc_var_without_name' => true,
 
     // Return Notation
-    'no_useless_return' => true,
+    // 'no_useless_return' => true,
     // 'simplified_null_return' => true,
 
     // Semicolon
