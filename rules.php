@@ -52,8 +52,8 @@ return [
         'statements' => ['break', 'clone', 'continue', 'echo_print', 'return', 'switch_case', 'yield', 'yield_from'],
     ],
     'no_unneeded_curly_braces' => true,
-    'no_useless_else' => true,
-    'simplified_if_return' => true,
+    // 'no_useless_else' => true,
+    // 'simplified_if_return' => true,
     'switch_continue_to_break' => true,
     'trailing_comma_in_multiline' => [
         'after_heredoc' => true,
@@ -113,7 +113,7 @@ return [
     'general_phpdoc_tag_rename' => [
         'replacements' => ['inheritDocs' => 'inheritDoc'],
     ],
-    'no_blank_lines_after_phpdoc' => true,
+    // 'no_blank_lines_after_phpdoc' => true,
     'no_empty_phpdoc' => true,
     'no_superfluous_phpdoc_tags' => [
         'allow_mixed' => true,
