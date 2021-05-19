@@ -1,0 +1,21 @@
+{
+    "name": "jrmajor/cs",
+    "description": "My PHP-CS-Fixer configuration",
+    "homepage": "https://github.com/jrmajor/php-cs",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jeremiasz Major",
+            "email": "jrh.mjr@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">= 7.1",
+        "friendsofphp/php-cs-fixer": "^3.0"
+    },
+    "autoload": {
+        "files": ["helpers.php"]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
