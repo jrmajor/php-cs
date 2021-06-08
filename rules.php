@@ -175,7 +175,7 @@ return [
     ]],
     'heredoc_indentation' => true,
     'no_extra_blank_lines' => [
-        'tokens' => ['break', 'case', 'continue', 'curly_brace_block', 'default', 'extra', 'parenthesis_brace_block', 'switch', 'throw', 'use'],
+        'tokens' => ['break', 'case', 'continue', 'curly_brace_block', 'default', 'extra', 'parenthesis_brace_block', 'switch', 'throw'],
     ],
     'no_spaces_around_offset' => true,
 ];
