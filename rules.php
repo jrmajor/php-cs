@@ -94,7 +94,7 @@ return [
     'binary_operator_spaces' => [
         'operators' => ['|' => null],
     ],
-    'concat_space' => true,
+    'concat_space' => ['spacing' => 'one'],
     'increment_style' => ['style' => 'post'],
     'not_operator_with_successor_space' => true,
     'object_operator_without_whitespace' => true,
