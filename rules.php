@@ -58,7 +58,9 @@ return [
     'switch_continue_to_break' => true,
     'trailing_comma_in_multiline' => [
         'after_heredoc' => true,
-        'elements' => ['arrays', 'arguments', 'parameters'],
+        'elements' => PHP_VERSION_ID >= 80000
+            ? ['arrays', 'arguments', 'parameters']
+            : ['arrays', 'arguments'],
     ],
 
     // Function Notation
