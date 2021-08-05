@@ -32,7 +32,8 @@ return [
     'no_unset_cast' => true,
 
     // Class Notation
-    'class_attributes_separation' => true,
+    // Re-enable when https://github.com/FriendsOfPHP/PHP-CS-Fixer/issues/5854 is resolved.
+    // 'class_attributes_separation' => true,
     'class_definition' => false,
     'ordered_class_elements' => [
         'order' => ['use_trait', 'constant', 'property', 'construct', 'method', 'magic'],
@@ -170,9 +171,9 @@ return [
 
     // Whitespace
     'array_indentation' => true,
-    'blank_line_before_statement' => ['statements' => [
-        'continue', 'declare', 'do', 'exit', 'for', 'foreach', 'if', 'include', 'include_once', 'require', 'require_once', 'return', 'switch', 'throw', 'try', 'while', 'yield', 'yield_from',
-    ]],
+    'blank_line_before_statement' => [
+        'statements' => ['continue', 'declare', 'do', 'exit', 'for', 'foreach', 'if', 'include', 'include_once', 'require', 'require_once', 'return', 'switch', 'throw', 'try', 'while', 'yield', 'yield_from'],
+    ],
     'heredoc_indentation' => true,
     'no_extra_blank_lines' => [
         'tokens' => ['break', 'case', 'continue', 'curly_brace_block', 'default', 'extra', 'parenthesis_brace_block', 'switch', 'throw'],
