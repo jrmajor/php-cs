@@ -1,4 +1,4 @@
-My personal [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) configuration, used for all my PHP projects.
+My personal [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) configuration, used in all of my PHP projects.
 
 Install it via Composer: `composer require jrmajor/cs` and use `Major\CS\config()` function in `.php-cs-fixer.php`:
 
