@@ -94,7 +94,7 @@ return [
 
     // Import
     'fully_qualified_strict_types' => true,
-    'global_namespace_import' => true,
+    'global_namespace_import' => ['import_classes' => true, 'import_constants' => true, 'import_functions' => true],
     'group_import' => false,
     'no_leading_import_slash' => true,
     'no_unused_imports' => true,
