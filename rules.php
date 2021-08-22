@@ -38,11 +38,13 @@ return [
     // Class Notation
     // Re-enable when https://github.com/FriendsOfPHP/PHP-CS-Fixer/issues/5854 is resolved.
     // 'class_attributes_separation' => true,
-    'class_definition' => false,
+    'class_definition' => ['single_line' => true],
     'no_blank_lines_after_class_opening' => true,
+    'no_null_property_initialization' => true,
     'ordered_class_elements' => [
         'order' => ['use_trait', 'constant', 'property', 'construct', 'method', 'magic'],
     ],
+    'protected_to_private' => true,
     'self_static_accessor' => true,
     'single_class_element_per_statement' => true,
     'single_trait_insert_per_statement' => true,
@@ -51,6 +53,7 @@ return [
     // Comment
     'header_comment' => false,
     'multiline_comment_opening_closing' => true,
+    'no_empty_comment' => true,
     'no_trailing_whitespace_in_comment' => true,
     'single_line_comment_style' => true,
 
@@ -189,8 +192,9 @@ return [
     'phpdoc_var_without_name' => true,
 
     // Return Notation
-    // 'no_useless_return' => true,
-    // 'simplified_null_return' => true,
+    'no_useless_return' => true,
+    'return_assignment' => true,
+    'simplified_null_return' => true,
 
     // Semicolon
     'multiline_whitespace_before_semicolons' => true,
