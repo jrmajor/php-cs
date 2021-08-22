@@ -215,12 +215,12 @@ return [
     // Whitespace
     'array_indentation' => true,
     'blank_line_before_statement' => [
-        'statements' => ['continue', 'declare', 'do', 'exit', 'for', 'foreach', 'if', 'include', 'include_once', 'require', 'require_once', 'return', 'switch', 'throw', 'try', 'while', 'yield', 'yield_from'],
+        'statements' => ['break', 'continue', 'declare', 'do', 'exit', 'for', 'foreach', 'goto', 'if', 'include', 'include_once', 'require', 'require_once', 'return', 'switch', 'throw', 'try', 'while', 'yield', 'yield_from'],
     ],
     'compact_nullable_typehint' => true,
     'heredoc_indentation' => true,
     'no_extra_blank_lines' => [
-        'tokens' => ['break', 'case', 'continue', 'curly_brace_block', 'default', 'extra', 'parenthesis_brace_block', 'switch', 'throw'],
+        'tokens' => ['case', 'continue', 'curly_brace_block', 'default', 'extra', 'parenthesis_brace_block', 'switch', 'throw'],
     ],
     'no_spaces_around_offset' => true,
     'no_spaces_inside_parenthesis' => true,
