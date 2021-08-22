@@ -219,6 +219,8 @@ return [
     ],
     'compact_nullable_typehint' => true,
     'heredoc_indentation' => true,
+    'indentation_type' => true,
+    'line_ending' => true,
     'no_extra_blank_lines' => [
         'tokens' => ['case', 'continue', 'curly_brace_block', 'default', 'extra', 'parenthesis_brace_block', 'switch', 'throw'],
     ],
