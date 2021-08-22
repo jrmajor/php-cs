@@ -1,8 +1,6 @@
 <?php
 
 return [
-    '@PSR12' => true,
-
     // Alias
     'backtick_to_shell_exec' => true,
     'no_alias_language_construct_call' => true,
@@ -19,8 +17,12 @@ return [
 
     // Basic
     'braces' => false,
+    'encoding' => true,
 
     // Casing
+    'constant_case' => true,
+    'lowercase_keywords' => true,
+    'lowercase_static_reference' => true,
     'magic_constant_casing' => true,
     'magic_method_casing' => true,
     'native_function_casing' => true,
@@ -28,25 +30,34 @@ return [
 
     // Cast Notation
     'cast_spaces' => true,
+    'lowercase_cast' => true,
     'no_short_bool_cast' => true,
     'no_unset_cast' => true,
+    'short_scalar_cast' => true,
 
     // Class Notation
     // Re-enable when https://github.com/FriendsOfPHP/PHP-CS-Fixer/issues/5854 is resolved.
     // 'class_attributes_separation' => true,
     'class_definition' => false,
+    'no_blank_lines_after_class_opening' => true,
     'ordered_class_elements' => [
         'order' => ['use_trait', 'constant', 'property', 'construct', 'method', 'magic'],
     ],
     'self_static_accessor' => true,
+    'single_class_element_per_statement' => true,
+    'single_trait_insert_per_statement' => true,
+    'visibility_required' => true,
 
     // Comment
     'multiline_comment_opening_closing' => true,
+    'no_trailing_whitespace_in_comment' => true,
     'single_line_comment_style' => true,
 
     // Control Structure
+    'elseif' => true,
     'include' => true,
     'no_alternative_syntax' => true,
+    'no_break_comment' => true,
     'no_superfluous_elseif' => true,
     'no_trailing_comma_in_list_call' => true,
     'no_unneeded_control_parentheses' => [
@@ -55,6 +66,8 @@ return [
     'no_unneeded_curly_braces' => true,
     // 'no_useless_else' => true,
     // 'simplified_if_return' => true,
+    'switch_case_semicolon_to_colon' => true,
+    'switch_case_space' => true,
     'switch_continue_to_break' => true,
     'trailing_comma_in_multiline' => [
         'after_heredoc' => true,
@@ -64,25 +77,32 @@ return [
     ],
 
     // Function Notation
+    'function_declaration' => true,
     'function_typehint_space' => true,
     'lambda_not_used_import' => true,
     'method_argument_space' => ['on_multiline' => 'ignore'],
+    'no_spaces_after_function_name' => true,
     'nullable_type_declaration_for_default_null_value' => [
         'use_nullable_type_declaration' => false,
     ],
+    'return_type_declaration' => true,
 
     // Import
     'fully_qualified_strict_types' => true,
     'global_namespace_import' => true,
+    'no_leading_import_slash' => true,
     'no_unused_imports' => true,
     'ordered_imports' => [
         'imports_order' => ['class', 'function', 'const'],
         'sort_algorithm' => 'alpha',
     ],
+    'single_import_per_statement' => true,
+    'single_line_after_imports' => true,
 
     // Language Construct
     'combine_consecutive_issets' => true,
     'combine_consecutive_unsets' => true,
+    'declare_equal_normalize' => true,
     'explicit_indirect_variable' => true,
     'single_space_after_construct' => true,
 
@@ -90,8 +110,10 @@ return [
     'list_syntax' => true,
 
     // Namespace Notation
+    'blank_line_after_namespace' => true,
     'clean_namespace' => true,
     'no_leading_namespace_whitespace' => true,
+    'single_blank_line_before_namespace' => true,
 
     // Operator
     'binary_operator_spaces' => [
@@ -99,17 +121,22 @@ return [
     ],
     'concat_space' => ['spacing' => 'one'],
     'increment_style' => ['style' => 'post'],
+    'new_with_braces' => true,
     'not_operator_with_successor_space' => true,
     'object_operator_without_whitespace' => true,
     'operator_linebreak' => true,
     'standardize_increment' => true,
     'standardize_not_equals' => true,
+    'ternary_operator_spaces' => true,
     'ternary_to_null_coalescing' => true,
     'unary_operator_spaces' => true,
 
     // PHP Tag
+    'blank_line_after_opening_tag' => true,
     'echo_tag_syntax' => true,
+    'full_opening_tag' => true,
     'linebreak_after_opening_tag' => true,
+    'no_closing_tag' => true,
 
     // PHPDoc
     'align_multiline_comment' => true,
@@ -176,9 +203,14 @@ return [
     'blank_line_before_statement' => [
         'statements' => ['continue', 'declare', 'do', 'exit', 'for', 'foreach', 'if', 'include', 'include_once', 'require', 'require_once', 'return', 'switch', 'throw', 'try', 'while', 'yield', 'yield_from'],
     ],
+    'compact_nullable_typehint' => true,
     'heredoc_indentation' => true,
     'no_extra_blank_lines' => [
         'tokens' => ['break', 'case', 'continue', 'curly_brace_block', 'default', 'extra', 'parenthesis_brace_block', 'switch', 'throw'],
     ],
     'no_spaces_around_offset' => true,
+    'no_spaces_inside_parenthesis' => true,
+    'no_trailing_whitespace' => true,
+    'no_whitespace_in_blank_line' => true,
+    'single_blank_line_at_eof' => true,
 ];
