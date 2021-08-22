@@ -163,7 +163,7 @@ return [
         'tags' => ['param', 'property', 'property-read', 'property-write', 'return', 'throws', 'type', 'var', 'method'],
         'align' => 'left',
     ],
-    'phpdoc_annotation_without_dot' => true,
+    'phpdoc_annotation_without_dot' => false,
     'phpdoc_indent' => true,
     'phpdoc_inline_tag_normalizer' => true,
     'phpdoc_line_span' => ['const' => 'single', 'property' => 'single'],
