@@ -79,6 +79,7 @@ return [
             ? ['arrays', 'arguments', 'parameters']
             : ['arrays', 'arguments'],
     ],
+    'yoda_style' => ['equal' => false, 'identical' => false, 'less_and_greater' => false],
 
     // Function Notation
     'function_declaration' => true,
