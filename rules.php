@@ -152,7 +152,7 @@ return [
     'general_phpdoc_tag_rename' => [
         'replacements' => ['inheritDocs' => 'inheritDoc'],
     ],
-    // 'no_blank_lines_after_phpdoc' => true,
+    'no_blank_lines_after_phpdoc' => false,
     'no_empty_phpdoc' => true,
     'no_superfluous_phpdoc_tags' => [
         'allow_mixed' => true,
@@ -181,6 +181,7 @@ return [
     'phpdoc_summary' => true,
     'phpdoc_tag_casing' => true,
     'phpdoc_tag_type' => false,
+    'phpdoc_to_comment' => false,
     'phpdoc_trim_consecutive_blank_line_separation' => true,
     'phpdoc_trim' => true,
     'phpdoc_types' => true,
