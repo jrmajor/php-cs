@@ -49,6 +49,7 @@ return [
     'visibility_required' => true,
 
     // Comment
+    'header_comment' => false,
     'multiline_comment_opening_closing' => true,
     'no_trailing_whitespace_in_comment' => true,
     'single_line_comment_style' => true,
@@ -86,10 +87,12 @@ return [
         'use_nullable_type_declaration' => false,
     ],
     'return_type_declaration' => true,
+    'single_line_throw' => false,
 
     // Import
     'fully_qualified_strict_types' => true,
     'global_namespace_import' => true,
+    'group_import' => false,
     'no_leading_import_slash' => true,
     'no_unused_imports' => true,
     'ordered_imports' => [
@@ -100,6 +103,7 @@ return [
     'single_line_after_imports' => true,
 
     // Language Construct
+    'class_keyword_remove' => false,
     'combine_consecutive_issets' => true,
     'combine_consecutive_unsets' => true,
     'declare_equal_normalize' => true,
@@ -112,6 +116,7 @@ return [
     // Namespace Notation
     'blank_line_after_namespace' => true,
     'clean_namespace' => true,
+    'no_blank_lines_before_namespace' => false,
     'no_leading_namespace_whitespace' => true,
     'single_blank_line_before_namespace' => true,
 
@@ -140,6 +145,7 @@ return [
 
     // PHPDoc
     'align_multiline_comment' => true,
+    'general_phpdoc_annotation_remove' => false,
     'general_phpdoc_tag_rename' => [
         'replacements' => ['inheritDocs' => 'inheritDoc'],
     ],
@@ -149,6 +155,7 @@ return [
         'allow_mixed' => true,
         'allow_unused_params' => true,
     ],
+    'phpdoc_add_missing_param_annotation' => false,
     'phpdoc_align' => [
         'tags' => ['param', 'property', 'property-read', 'property-write', 'return', 'throws', 'type', 'var', 'method'],
         'align' => 'left',
@@ -166,9 +173,11 @@ return [
     'phpdoc_no_useless_inheritdoc' => true,
     'phpdoc_return_self_reference' => true,
     'phpdoc_scalar' => true,
+    'phpdoc_separation' => false,
     'phpdoc_single_line_var_spacing' => true,
     'phpdoc_summary' => true,
     'phpdoc_tag_casing' => true,
+    'phpdoc_tag_type' => false,
     'phpdoc_trim_consecutive_blank_line_separation' => true,
     'phpdoc_trim' => true,
     'phpdoc_types' => true,
