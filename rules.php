@@ -222,6 +222,7 @@ return [
     'heredoc_indentation' => true,
     'indentation_type' => true,
     'line_ending' => true,
+    'method_chaining_indentation' => true,
     'no_extra_blank_lines' => [
         'tokens' => ['case', 'continue', 'curly_brace_block', 'default', 'extra', 'parenthesis_brace_block', 'switch', 'throw'],
     ],
