@@ -59,6 +59,7 @@ return [
 
     // Control Structure
     'elseif' => true,
+    'empty_loop_body' => true,
     'include' => true,
     'no_alternative_syntax' => true,
     'no_break_comment' => true,
@@ -110,6 +111,7 @@ return [
     'combine_consecutive_issets' => true,
     'combine_consecutive_unsets' => true,
     'declare_equal_normalize' => true,
+    'declare_parentheses' => true,
     'explicit_indirect_variable' => true,
     'single_space_after_construct' => true,
 
@@ -230,4 +232,5 @@ return [
     'no_trailing_whitespace' => true,
     'no_whitespace_in_blank_line' => true,
     'single_blank_line_at_eof' => true,
+    'types_spaces' => true,
 ];
