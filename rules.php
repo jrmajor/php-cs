@@ -36,8 +36,11 @@ return [
     'short_scalar_cast' => true,
 
     // Class Notation
-    'class_definition' => ['single_line' => true],
     'class_attributes_separation' => true,
+    'class_definition' => [
+        'single_line' => true,
+        'space_before_parenthesis' => true,
+    ],
     'no_blank_lines_after_class_opening' => true,
     'no_null_property_initialization' => true,
     'ordered_class_elements' => [
