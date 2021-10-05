@@ -94,9 +94,7 @@ return [
     'lambda_not_used_import' => true,
     'method_argument_space' => ['on_multiline' => 'ignore'],
     'no_spaces_after_function_name' => true,
-    'nullable_type_declaration_for_default_null_value' => [
-        'use_nullable_type_declaration' => false,
-    ],
+    'nullable_type_declaration_for_default_null_value' => true,
     'return_type_declaration' => true,
     'single_line_throw' => false,
 
