@@ -62,6 +62,7 @@ return [
     'single_line_comment_style' => true,
 
     // Control Structure
+    'control_structure_continuation_position' => true,
     'elseif' => true,
     'empty_loop_body' => true,
     'empty_loop_condition' => true,
