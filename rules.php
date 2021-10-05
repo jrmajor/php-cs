@@ -36,7 +36,7 @@ return [
     'short_scalar_cast' => true,
 
     // Class Notation
-    // 'class_attributes_separation' => true,
+    'class_attributes_separation' => true,
     'class_definition' => [
         'single_line' => true,
         'space_before_parenthesis' => true,
