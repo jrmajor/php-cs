@@ -46,7 +46,7 @@ return [
     'no_blank_lines_after_class_opening' => true,
     'no_null_property_initialization' => true,
     'ordered_class_elements' => [
-        'order' => ['use_trait', 'constant', 'property', 'construct', 'method', 'magic'],
+        'order' => ['use_trait', 'constant', 'property', 'method_abstract', 'construct', 'method', 'magic'],
     ],
     'protected_to_private' => true,
     'self_static_accessor' => true,
