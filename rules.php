@@ -18,9 +18,11 @@ return [
     // Basic
     'braces' => false,
     'encoding' => true,
+    'octal_notation' => true,
 
     // Casing
     'constant_case' => true,
+    'integer_literal_case' => true,
     'lowercase_keywords' => true,
     'lowercase_static_reference' => true,
     'magic_constant_casing' => true,
@@ -62,6 +64,7 @@ return [
     // Control Structure
     'elseif' => true,
     'empty_loop_body' => true,
+    'empty_loop_condition' => true,
     'include' => true,
     'no_alternative_syntax' => true,
     'no_break_comment' => true,
@@ -128,12 +131,14 @@ return [
     'single_blank_line_before_namespace' => true,
 
     // Operator
+    'assign_null_coalescing_to_coalesce_equal' => true,
     'binary_operator_spaces' => [
         'operators' => ['|' => null],
     ],
     'concat_space' => ['spacing' => 'one'],
     'increment_style' => ['style' => 'post'],
     'new_with_braces' => true,
+    'no_space_around_double_colon' => true,
     'not_operator_with_successor_space' => true,
     'object_operator_without_whitespace' => true,
     'operator_linebreak' => true,
