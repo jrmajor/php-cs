@@ -133,9 +133,7 @@ return [
 
     // Operator
     'assign_null_coalescing_to_coalesce_equal' => true,
-    'binary_operator_spaces' => [
-        'operators' => ['|' => null],
-    ],
+    'binary_operator_spaces' => true,
     'concat_space' => ['spacing' => 'one'],
     'increment_style' => ['style' => 'post'],
     'new_with_braces' => true,
