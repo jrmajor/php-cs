@@ -67,7 +67,7 @@ return [
     'empty_loop_body' => true,
     'empty_loop_condition' => true,
     'include' => true,
-    'no_alternative_syntax' => true,
+    'no_alternative_syntax' => ['fix_non_monolithic_code' => false],
     'no_break_comment' => true,
     'no_superfluous_elseif' => true,
     'no_trailing_comma_in_list_call' => true,
