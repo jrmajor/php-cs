@@ -152,6 +152,12 @@ return [
     'linebreak_after_opening_tag' => true,
     'no_closing_tag' => true,
 
+    // PHPUnit
+    'php_unit_fqcn_annotation' => true,
+    'php_unit_internal_class' => false,
+    'php_unit_size_class' => false,
+    'php_unit_test_class_requires_covers' => false,
+
     // PHPDoc
     'align_multiline_comment' => true,
     'general_phpdoc_annotation_remove' => false,
