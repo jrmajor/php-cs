@@ -266,5 +266,5 @@ return [
     Custom\PromotedConstructorPropertyFixer::name() => true,
     Custom\SingleSpaceAfterStatementFixer::name() => true,
     Custom\SingleSpaceBeforeStatementFixer::name() => true,
-    Custom\StringableInterfaceFixer::name() => true,
+    // Custom\StringableInterfaceFixer::name() => true,
 ];
