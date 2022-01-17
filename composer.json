@@ -1,7 +1,6 @@
 {
     "name": "jrmajor/cs",
     "description": "My PHP-CS-Fixer configuration",
-    "homepage": "https://github.com/jrmajor/php-cs",
     "license": "MIT",
     "authors": [
         {
@@ -9,14 +8,17 @@
             "email": "jrh.mjr@gmail.com"
         }
     ],
+    "homepage": "https://github.com/jrmajor/php-cs",
     "require": {
         "php": ">= 7.2",
         "friendsofphp/php-cs-fixer": "^3.3",
         "kubawerlos/php-cs-fixer-custom-fixers": "^3.1"
     },
-    "autoload": {
-        "files": ["helpers.php"]
-    },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "autoload": {
+        "files": [
+            "helpers.php"
+        ]
+    }
 }
