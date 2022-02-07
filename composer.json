@@ -11,7 +11,7 @@
     "homepage": "https://github.com/jrmajor/php-cs",
     "require": {
         "php": ">= 7.4",
-        "friendsofphp/php-cs-fixer": "^3.5",
+        "friendsofphp/php-cs-fixer": "^3.6",
         "kubawerlos/php-cs-fixer-custom-fixers": "^3.1"
     },
     "minimum-stability": "dev",
