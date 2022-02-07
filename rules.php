@@ -23,6 +23,7 @@ return [
     'octal_notation' => true,
 
     // Casing
+    'class_reference_name_casing' => true,
     'constant_case' => true,
     'integer_literal_case' => true,
     'lowercase_keywords' => true,
@@ -105,6 +106,7 @@ return [
     'global_namespace_import' => ['import_classes' => true, 'import_constants' => true, 'import_functions' => true],
     'group_import' => false,
     'no_leading_import_slash' => true,
+    'no_unneeded_import_alias' => true,
     'no_unused_imports' => true,
     'ordered_imports' => [
         'imports_order' => ['class', 'function', 'const'],
