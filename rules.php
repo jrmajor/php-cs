@@ -45,11 +45,12 @@ return [
     'class_definition' => [
         'single_line' => true,
         'space_before_parenthesis' => true,
+        'inline_constructor_arguments' => false,
     ],
     'no_blank_lines_after_class_opening' => true,
     'no_null_property_initialization' => true,
     'ordered_class_elements' => [
-        'order' => ['use_trait', 'constant', 'property', 'method_abstract', 'construct', 'method', 'magic'],
+        'order' => ['use_trait', 'case', 'constant', 'property', 'method_abstract', 'construct', 'method', 'magic'],
     ],
     'protected_to_private' => true,
     'self_static_accessor' => true,
@@ -140,7 +141,7 @@ return [
     'binary_operator_spaces' => true,
     'concat_space' => ['spacing' => 'one'],
     'increment_style' => ['style' => 'post'],
-    'new_with_braces' => true,
+    'new_with_braces' => ['anonymous_class' => false],
     'no_space_around_double_colon' => true,
     'not_operator_with_successor_space' => true,
     'object_operator_without_whitespace' => true,
