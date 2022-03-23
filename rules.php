@@ -253,7 +253,6 @@ return [
 
     // kubawerlos/php-cs-fixer-custom-fixers
     Custom\CommentSurroundedBySpacesFixer::name() => true,
-    Custom\InternalClassCasingFixer::name() => true,
     Custom\MultilineCommentOpeningClosingAloneFixer::name() => true,
     Custom\MultilinePromotedPropertiesFixer::name() => true,
     // Custom\NoCommentedOutCodeFixer::name() => true,
