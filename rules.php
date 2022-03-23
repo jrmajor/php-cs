@@ -94,6 +94,7 @@ return [
     'yoda_style' => ['equal' => false, 'identical' => false, 'less_and_greater' => false],
 
     // Function Notation
+    'date_time_create_from_format_call' => false,
     'function_declaration' => true,
     'function_typehint_space' => true,
     'lambda_not_used_import' => true,
