@@ -18,7 +18,8 @@
     "prefer-stable": true,
     "autoload": {
         "files": [
-            "helpers.php"
+            "helpers.php",
+            "internal.php"
         ]
     }
 }

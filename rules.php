@@ -2,6 +2,8 @@
 
 use PhpCsFixerCustomFixers\Fixer as Custom;
 
+use function Major\CS\Internal\version;
+
 return [
     // Alias
     'backtick_to_shell_exec' => true,
@@ -87,9 +89,7 @@ return [
     'switch_continue_to_break' => true,
     'trailing_comma_in_multiline' => [
         'after_heredoc' => true,
-        'elements' => PHP_VERSION_ID >= 80000
-            ? ['arrays', 'arguments', 'parameters']
-            : ['arrays', 'arguments'],
+        'elements' => version(8.0, ['arrays', 'arguments', 'parameters'], ['arrays', 'arguments']),
     ],
     'yoda_style' => ['equal' => false, 'identical' => false, 'less_and_greater' => false],
 
