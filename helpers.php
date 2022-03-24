@@ -11,6 +11,11 @@ function config(Finder $finder, array $rules = []): ConfigInterface
 {
     return (new Config('jrmajor/cs'))
         ->registerCustomFixers(new CustomFixers())
-        ->setRules(array_merge(require __DIR__ . '/rules.php', $rules))
-        ->setFinder($finder);
+        ->setRules(array_merge(
+            require __DIR__ . '/rules.php',
+            require __DIR__ . '/risky.php',
+            $rules,
+        ))
+        ->setFinder($finder)
+        ->setRiskyAllowed(true);
 }
