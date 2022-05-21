@@ -12,7 +12,7 @@ $finder = PhpCsFixer\Finder::create()
     ->notPath('storage')
     ->notName('*.blade.php')
     ->notName('_ide_helper*.php')
-    ->ignoreVCS(true);
+    ->ignoreVCSIgnored(true);
 
 return Major\CS\config($finder, ['overwritten_rule' => false]);
 ```
