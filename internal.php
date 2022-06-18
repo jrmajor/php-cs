@@ -5,7 +5,7 @@ namespace Major\CS\Internal;
 /**
  * Denotes cases that are static analysis tooling responsibility.
  */
-const STATIC_ANALYSIS = false;
+const StaticAnalysis = false;
 
 /**
  * These fixers may be useful when working with legacy codebases.

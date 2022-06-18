@@ -4,7 +4,7 @@ use function Major\CS\Internal\legacy;
 use function Major\CS\Internal\rare;
 use function Major\CS\Internal\version;
 
-use const Major\CS\Internal\STATIC_ANALYSIS;
+use const Major\CS\Internal\StaticAnalysis;
 
 return [
     // Alias
@@ -23,15 +23,15 @@ return [
 
     // Basic
     'non_printable_character' => true,
-    'psr_autoloading' => STATIC_ANALYSIS,
+    'psr_autoloading' => StaticAnalysis,
 
     // Cast Notation
     'modernize_types_casting' => true,
 
     // Class Notation
-    'final_class' => STATIC_ANALYSIS,
-    'final_internal_class' => STATIC_ANALYSIS,
-    'final_public_method_for_abstract_class' => STATIC_ANALYSIS,
+    'final_class' => StaticAnalysis,
+    'final_internal_class' => StaticAnalysis,
+    'final_public_method_for_abstract_class' => StaticAnalysis,
     // Risky when old style constructor is overridden or overrides parent one.
     'no_php4_constructor' => legacy(),
     // Risky when child class overrides a private method on PHP < 8.0.
@@ -45,7 +45,7 @@ return [
     'self_accessor' => true,
 
     // Class Usage
-    'date_time_immutable' => STATIC_ANALYSIS,
+    'date_time_immutable' => StaticAnalysis,
 
     // Comment
     'comment_to_phpdoc' => true,
@@ -61,13 +61,13 @@ return [
     'native_function_invocation' => false,
     'no_unreachable_default_argument_value' => legacy(),
     'no_useless_sprintf' => true,
-    'phpdoc_to_param_type' => STATIC_ANALYSIS,
-    'phpdoc_to_property_type' => STATIC_ANALYSIS,
-    'phpdoc_to_return_type' => STATIC_ANALYSIS,
+    'phpdoc_to_param_type' => StaticAnalysis,
+    'phpdoc_to_property_type' => StaticAnalysis,
+    'phpdoc_to_return_type' => StaticAnalysis,
     'regular_callable_call' => true,
     'static_lambda' => false,
     'use_arrow_functions' => false,
-    'void_return' => STATIC_ANALYSIS,
+    'void_return' => StaticAnalysis,
 
     // Language Construct
     'dir_constant' => legacy(),
@@ -91,6 +91,6 @@ return [
     // String Notation
     'no_trailing_whitespace_in_string' => true,
     // Risky when called using a Stringable object.
-    'string_length_to_empty' => STATIC_ANALYSIS,
+    'string_length_to_empty' => StaticAnalysis,
     'string_line_ending' => true,
 ];
