@@ -85,8 +85,8 @@ return [
 
     // Strict
     'declare_strict_types' => false,
-    'strict_comparison' => true,
-    'strict_param' => true,
+    'strict_comparison' => StaticAnalysis,
+    'strict_param' => StaticAnalysis,
 
     // String Notation
     'no_trailing_whitespace_in_string' => true,
