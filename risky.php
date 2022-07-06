@@ -51,7 +51,7 @@ return [
     'comment_to_phpdoc' => true,
 
     // Constant Notation
-    'native_constant_invocation' =>  false,
+    'native_constant_invocation' => false,
 
     // Function Notation
     'combine_nested_dirname' => legacy(),

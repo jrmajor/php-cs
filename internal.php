@@ -43,7 +43,7 @@ function version(
 
     $version = 10000 * $major + 100 * $minor;
 
-    return PHP_VERSION_ID >= $version ? $after : $before;
+    return $version <= PHP_VERSION_ID ? $after : $before;
 }
 
 /**
