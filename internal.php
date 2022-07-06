@@ -16,7 +16,7 @@ const StaticAnalysis = false;
  * @param T $options
  * @return T|false
  */
-function legacy(bool|array $options = true): bool|array
+function legacy($options = true)
 {
     $legacy = getenv('MAJOR_CS_LEGACY_RULES');
 
@@ -33,11 +33,8 @@ function legacy(bool|array $options = true): bool|array
  * @param Tb $before
  * @return Ta|Tb
  */
-function version(
-    float $version,
-    bool|array $after = true,
-    bool|array $before = false,
-): bool|array {
+function version(float $version, $after = true, $before = false)
+{
     $major = (int) $version;
     $minor = ($version - $major) * 10;
 
@@ -54,7 +51,7 @@ function version(
  * @param T $options
  * @return T|false
  */
-function rare(bool|array $options = true): bool|array
+function rare($options = true)
 {
     return false;
 }
