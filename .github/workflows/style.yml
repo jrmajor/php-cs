@@ -1,0 +1,46 @@
+name: Style
+
+on:
+  pull_request:
+  push:
+    branches-ignore: [master]
+
+jobs:
+  style:
+    name: Style
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+
+      - name: Get Composer cache directory path
+        id: composer-cache-dir
+        run: |
+          echo "::set-output name=path::$(composer config cache-files-dir)"
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer-cache-dir.outputs.path }}
+          key: composer-${{ hashFiles('composer.lock') }}
+          restore-keys: composer-
+
+      - name: PHP-CS-Fixer cache
+        uses: actions/cache@v2
+        with:
+          path: .cache/.php-cs-fixer.cache
+          key: php-cs-fixer-${{ github.sha }}
+          restore-keys: php-cs-fixer-
+
+      - name: Install Composer dependencies
+        run: composer install --no-progress --no-interaction
+
+      - name: Run PHP-CS-Fixer
+        run: vendor/bin/php-cs-fixer fix --dry-run --diff --no-interaction
