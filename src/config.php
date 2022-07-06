@@ -12,8 +12,8 @@ function config(Finder $finder, array $rules = []): ConfigInterface
     return (new Config('jrmajor/cs'))
         ->registerCustomFixers(new CustomFixers())
         ->setRules(array_merge(
-            require __DIR__ . '/rules.php',
-            require __DIR__ . '/risky.php',
+            require __DIR__ . '/Rules/rules.php',
+            require __DIR__ . '/Rules/risky.php',
             $rules,
         ))
         ->setFinder($finder)

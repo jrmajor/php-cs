@@ -1,8 +1,8 @@
 <?php
 
-use PhpCsFixerCustomFixers\Fixer as Custom;
+namespace Major\CS\Rules;
 
-use function Major\CS\Internal\version;
+use PhpCsFixerCustomFixers\Fixer as Custom;
 
 return [
     // Alias

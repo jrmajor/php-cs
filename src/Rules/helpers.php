@@ -1,6 +1,6 @@
 <?php
 
-namespace Major\CS\Internal;
+namespace Major\CS\Rules;
 
 /**
  * Denotes cases that are static analysis tooling responsibility.

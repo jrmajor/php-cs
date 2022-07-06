@@ -1,10 +1,6 @@
 <?php
 
-use function Major\CS\Internal\legacy;
-use function Major\CS\Internal\rare;
-use function Major\CS\Internal\version;
-
-use const Major\CS\Internal\StaticAnalysis;
+namespace Major\CS\Rules;
 
 return [
     // Alias

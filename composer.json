@@ -18,8 +18,8 @@
     "prefer-stable": true,
     "autoload": {
         "files": [
-            "helpers.php",
-            "internal.php"
+            "src/Rules/helpers.php",
+            "src/config.php"
         ]
     }
 }
