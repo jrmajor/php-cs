@@ -44,9 +44,9 @@ abstract class FixerTest extends TestCase
 {
     use AssertTokens;
 
-    private ?Linter\LinterInterface $linter;
+    private Linter\LinterInterface $linter;
 
-    protected ?FixerInterface $fixer;
+    protected FixerInterface $fixer;
 
     abstract protected function createFixer(): FixerInterface;
 
@@ -64,14 +64,14 @@ abstract class FixerTest extends TestCase
     {
         parent::tearDown();
 
-        $this->linter = null;
-        $this->fixer = null;
+        unset($this->linter, $this->fixer);
     }
 
     final public function testIsRisky(): void
     {
         if ($this->fixer->isRisky()) {
-            self::assertValidDescription($this->fixer->getName(), 'risky description', $this->fixer->getDefinition()->getRiskyDescription());
+            self::assertNotNull($description = $this->fixer->getDefinition()->getRiskyDescription());
+            self::assertValidDescription($this->fixer->getName(), 'risky description', $description);
         } else {
             static::assertNull($this->fixer->getDefinition()->getRiskyDescription(), "[{$this->fixer->getName()}] Fixer is not risky so no description of it expected.");
         }
@@ -81,7 +81,6 @@ abstract class FixerTest extends TestCase
     {
         $fixerName = $this->fixer->getName();
         $definition = $this->fixer->getDefinition();
-        $fixerIsConfigurable = $this->fixer instanceof ConfigurableFixerInterface;
 
         self::assertValidDescription($fixerName, 'summary', $definition->getSummary());
 
@@ -103,7 +102,7 @@ abstract class FixerTest extends TestCase
                 continue;
             }
 
-            if ($fixerIsConfigurable) {
+            if ($this->fixer instanceof ConfigurableFixerInterface) {
                 // always re-configure as the fixer might have been configured with diff. configuration form previous sample
                 $this->fixer->configure($sample->getConfiguration() ?? []);
             }
@@ -156,7 +155,7 @@ abstract class FixerTest extends TestCase
 
             Tokens::clearCache();
             $expectedTokens = Tokens::fromCode($expected);
-            static::assertTokens($expectedTokens, $tokens);
+            self::assertTokens($expectedTokens, $tokens);
         }
 
         static::assertNull($this->lintSource($expected));
@@ -199,11 +198,11 @@ abstract class FixerTest extends TestCase
 
     private static function assertValidDescription(string $name, string $type, string $description): void
     {
-        static::assertMatchesRegularExpression('/^[A-Z`][^"]+\\.$/', $description, "[{$name}] The {$type} must start with capital letter or a ` and end with dot.");
-        static::assertStringNotContainsString('phpdocs', $description, "[{$name}] The {$type} must start with capital letter or a ` and end with dot.");
-        static::assertCorrectCasing($description, 'PHPDoc', "[{$name}] The {$type} must start with capital letter or a ` and end with dot.");
-        static::assertCorrectCasing($description, 'PHPUnit', "[{$name}] The {$type} must start with capital letter or a ` and end with dot.");
-        static::assertFalse(strpos($type, '``'), "[{$name}] The {$type} must start with capital letter or a ` and end with dot.");
+        self::assertMatchesRegularExpression('/^[A-Z`][^"]+\\.$/', $description, "[{$name}] The {$type} must start with capital letter or a ` and end with dot.");
+        self::assertStringNotContainsString('phpdocs', $description, "[{$name}] The {$type} must start with capital letter or a ` and end with dot.");
+        self::assertCorrectCasing($description, 'PHPDoc', "[{$name}] The {$type} must start with capital letter or a ` and end with dot.");
+        self::assertCorrectCasing($description, 'PHPUnit', "[{$name}] The {$type} must start with capital letter or a ` and end with dot.");
+        self::assertFalse(strpos($type, '``'), "[{$name}] The {$type} must start with capital letter or a ` and end with dot.");
     }
 
     private static function assertCorrectCasing(string $needle, string $haystack, string $message): void

@@ -7,6 +7,9 @@ use PhpCsFixer\ConfigInterface;
 use PhpCsFixer\Finder;
 use PhpCsFixerCustomFixers\Fixers as KubaFixers;
 
+/**
+ * @param array<string, bool|array<string, mixed>> $rules
+ */
 function config(Finder $finder, array $rules = []): ConfigInterface
 {
     return (new Config('jrmajor/cs'))

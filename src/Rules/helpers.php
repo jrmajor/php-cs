@@ -26,8 +26,8 @@ function legacy($options = true)
 /**
  * Enable or disable fixers depending on the current PHP version.
  *
- * @template Ta of true|array<string, mixed>
- * @template Tb of false|array<string, mixed>
+ * @template Ta of true|array<array-key, mixed>
+ * @template Tb of false|array<array-key, mixed>
  *
  * @param Ta $after
  * @param Tb $before
@@ -49,7 +49,7 @@ function version(float $version, $after = true, $before = false)
  * @template T of true|array<string, mixed>
  *
  * @param T $options
- * @return T|false
+ * @return false
  */
 function rare($options = true)
 {

@@ -18,6 +18,8 @@ abstract class AbstractFixer implements FixerInterface
         $name = end($nameParts);
         $name = preg_replace('/(?<!^)((?=[\\p{Lu}][^\\p{Lu}])|(?<![\\p{Lu}])(?=[\\p{Lu}]))/', '_', $name);
 
+        assert($name !== null);
+
         return 'Major/' . mb_strtolower($name);
     }
 

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @template TValue
+ * @implements ArrayAccess<int, TValue>
+ * @implements Iterator<int, TValue>
+ * @implements IteratorAggregate<int, TValue>
+ */
+class SplFixedArray implements ArrayAccess, Iterator, IteratorAggregate
+{
+    /**
+     * @return TValue
+     */
+    public function offsetGet($index): mixed;
+}

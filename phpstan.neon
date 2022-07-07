@@ -3,6 +3,8 @@ parameters:
     paths:
         - src
         - tests
+    stubFiles:
+        - phpstan.phpstub
     tmpDir: .cache/phpstan
 
 includes:
