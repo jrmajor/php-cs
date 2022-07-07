@@ -2,8 +2,6 @@
 
 namespace Major\CS\Rules;
 
-use PhpCsFixerCustomFixers\Fixer as Custom;
-
 return [
     // Alias
     'backtick_to_shell_exec' => true,
@@ -252,27 +250,4 @@ return [
     'no_whitespace_in_blank_line' => true,
     'single_blank_line_at_eof' => true,
     'types_spaces' => true,
-
-    // kubawerlos/php-cs-fixer-custom-fixers
-    Custom\CommentSurroundedBySpacesFixer::name() => true,
-    Custom\MultilineCommentOpeningClosingAloneFixer::name() => true,
-    Custom\MultilinePromotedPropertiesFixer::name() => true,
-    // Custom\NoCommentedOutCodeFixer::name() => true,
-    Custom\NoDuplicatedArrayKeyFixer::name() => true,
-    Custom\NoDuplicatedImportsFixer::name() => true,
-    Custom\NoLeadingSlashInGlobalNamespaceFixer::name() => true,
-    Custom\NoSuperfluousConcatenationFixer::name() => true,
-    Custom\NoTrailingCommaInSinglelineFixer::name() => true,
-    Custom\NoUselessCommentFixer::name() => true,
-    Custom\NoUselessParenthesisFixer::name() => true,
-    // Custom\PhpdocNoSuperfluousParamFixer::name() => true,
-    Custom\PhpdocParamOrderFixer::name() => true,
-    Custom\PhpdocParamTypeFixer::name() => true,
-    Custom\PhpdocSelfAccessorFixer::name() => true,
-    Custom\PhpdocSingleLineVarFixer::name() => true,
-    Custom\PhpdocTypesCommaSpacesFixer::name() => true,
-    Custom\PromotedConstructorPropertyFixer::name() => true,
-    Custom\SingleSpaceAfterStatementFixer::name() => true,
-    Custom\SingleSpaceBeforeStatementFixer::name() => true,
-    // Custom\StringableInterfaceFixer::name() => true,
 ];
