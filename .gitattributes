@@ -1,5 +1,6 @@
 /.github               export-ignore
 /integration           export-ignore
+/tests                 export-ignore
 /.php-cs-fixer.php     export-ignore
 /check                 export-ignore
 /composer.lock         export-ignore
