@@ -1,0 +1,50 @@
+name: Tests
+
+on:
+  pull_request:
+  push:
+    branches-ignore: [master]
+
+jobs:
+  unit-tests:
+    name: PHP ${{ matrix.php }}, ${{ matrix.stability }}
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['7.4', '8.0', '8.1']
+        stability: [prefer-lowest, prefer-stable]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+
+      - name: Get Composer cache directory path
+        id: composer-cache-dir
+        run: |
+          echo "::set-output name=path::$(composer config cache-files-dir)"
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer-cache-dir.outputs.path }}
+          key: composer-${{ hashFiles('composer.lock') }}
+          restore-keys: composer-
+
+      - name: PHPUnit cache
+        uses: actions/cache@v2
+        with:
+          path: .cache/phpunit
+          key: phpunit-${{ github.sha }}
+          restore-keys: phpunit-
+
+      - name: Install Composer dependencies
+        run: composer update --${{ matrix.stability }} --no-progress --no-interaction
+
+      - name: Execute tests
+        run: vendor/bin/phpunit
