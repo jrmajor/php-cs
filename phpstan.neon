@@ -1,0 +1,10 @@
+parameters:
+    level: max
+    paths:
+        - src
+        - tests
+    tmpDir: .cache/phpstan
+
+includes:
+    - vendor/phpstan/phpstan-phpunit/extension.neon
+    - vendor/phpstan/phpstan/conf/bleedingEdge.neon
