@@ -29,7 +29,7 @@ final class NoWhitespaceInEmptyArray extends AbstractFixer
      */
     public function getPriority(): int
     {
-        return 3;
+        return 0;
     }
 
     public function fix(SplFileInfo $file, Tokens $tokens): void
