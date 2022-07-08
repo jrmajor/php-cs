@@ -4,3 +4,6 @@
 /.php-cs-fixer.php     export-ignore
 /check                 export-ignore
 /composer.lock         export-ignore
+/phpstan.neon          export-ignore 
+/phpstan.phpstub       export-ignore 
+/phpunit.xml.dist      export-ignore 
