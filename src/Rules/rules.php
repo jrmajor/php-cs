@@ -19,6 +19,7 @@ return [
 
     // Basic
     'braces' => false,
+    'curly_braces_position' => false,
     'encoding' => true,
     'octal_notation' => true,
 
@@ -67,6 +68,7 @@ return [
     'single_line_comment_style' => true,
 
     // Control Structure
+    'control_structure_braces' => true,
     'control_structure_continuation_position' => true,
     'elseif' => true,
     'empty_loop_body' => true,
@@ -77,7 +79,7 @@ return [
     'no_superfluous_elseif' => true,
     'no_trailing_comma_in_list_call' => true,
     'no_unneeded_control_parentheses' => [
-        'statements' => ['break', 'clone', 'continue', 'echo_print', 'return', 'switch_case', 'yield', 'yield_from'],
+        'statements' => ['break', 'clone', 'continue', 'echo_print', 'negative_instanceof', 'others', 'return', 'switch_case', 'yield', 'yield_from'],
     ],
     'no_unneeded_curly_braces' => true,
     // 'no_useless_else' => true,
@@ -87,7 +89,7 @@ return [
     'switch_continue_to_break' => true,
     'trailing_comma_in_multiline' => [
         'after_heredoc' => true,
-        'elements' => version(8.0, ['arrays', 'arguments', 'parameters'], ['arrays', 'arguments']),
+        'elements' => version(8.0, ['arrays', 'arguments', 'parameters', 'match'], ['arrays', 'arguments']),
     ],
     'yoda_style' => ['equal' => false, 'identical' => false, 'less_and_greater' => false],
 
@@ -123,7 +125,9 @@ return [
     'declare_equal_normalize' => true,
     'declare_parentheses' => true,
     'explicit_indirect_variable' => true,
-    'single_space_after_construct' => true,
+    'single_space_after_construct' => [
+        'constructs' => ['abstract', 'as', 'attribute', 'break', 'case', 'catch', 'class', 'clone', 'comment', 'const', 'const_import', 'continue', 'do', 'echo', 'else', 'elseif', 'enum', 'extends', 'final', 'finally', 'for', 'foreach', 'function', 'function_import', 'global', 'goto', 'if', 'implements', 'include', 'include_once', 'instanceof', 'insteadof', 'interface', 'match', 'named_argument', 'namespace', 'new', 'open_tag_with_echo', 'php_doc', 'php_open', 'print', 'private', 'protected', 'public', 'readonly', 'require', 'require_once', 'return', 'static', 'switch', 'throw', 'trait', 'try', 'type_colon', 'use', 'use_lambda', 'use_trait', 'var', 'while', 'yield', 'yield_from'],
+    ],
 
     // List Notation
     'list_syntax' => true,
@@ -142,6 +146,7 @@ return [
     'increment_style' => ['style' => 'post'],
     'new_with_braces' => ['anonymous_class' => false],
     'no_space_around_double_colon' => true,
+    'no_useless_nullsafe_operator' => StaticAnalysis,
     'not_operator_with_successor_space' => true,
     'object_operator_without_whitespace' => true,
     'operator_linebreak' => true,
@@ -192,6 +197,8 @@ return [
     'phpdoc_no_empty_return' => true,
     'phpdoc_no_package' => true,
     'phpdoc_no_useless_inheritdoc' => true,
+    'phpdoc_order_by_value' => false,
+    'phpdoc_order' => false,
     'phpdoc_return_self_reference' => true,
     'phpdoc_scalar' => true,
     'phpdoc_separation' => false,
@@ -235,19 +242,20 @@ return [
     'blank_line_before_statement' => [
         'statements' => ['break', 'continue', 'declare', 'do', 'exit', 'for', 'foreach', 'goto', 'if', 'include', 'include_once', 'require', 'require_once', 'return', 'switch', 'throw', 'try', 'while', 'yield', 'yield_from'],
     ],
+    'blank_line_between_import_groups' => true,
     'compact_nullable_typehint' => true,
     'heredoc_indentation' => true,
     'indentation_type' => true,
     'line_ending' => true,
     'method_chaining_indentation' => true,
     'no_extra_blank_lines' => [
-        // 'case' removes new line between enum case and method.
-        'tokens' => [/* 'case', */ 'continue', 'curly_brace_block', 'default', 'extra', 'parenthesis_brace_block', 'switch'/* 'throw' */],
+        'tokens' => ['attribute', 'case', 'continue', 'curly_brace_block', 'default', 'extra', 'parenthesis_brace_block', 'switch', 'throw'],
     ],
     'no_spaces_around_offset' => true,
     'no_spaces_inside_parenthesis' => true,
     'no_trailing_whitespace' => true,
     'no_whitespace_in_blank_line' => true,
     'single_blank_line_at_eof' => true,
+    'statement_indentation' => true,
     'types_spaces' => true,
 ];
