@@ -21,6 +21,7 @@ return [
     'braces' => false,
     'curly_braces_position' => false,
     'encoding' => true,
+    'no_multiple_statements_per_line' => true,
     'octal_notation' => true,
 
     // Casing
