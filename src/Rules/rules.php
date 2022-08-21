@@ -15,7 +15,7 @@ return [
     'no_whitespace_before_comma_in_array' => true,
     'normalize_index_brace' => true,
     'trim_array_spaces' => true,
-    'whitespace_after_comma_in_array' => true,
+    'whitespace_after_comma_in_array' => ['ensure_single_space' => true],
 
     // Basic
     'braces' => false,
@@ -199,7 +199,18 @@ return [
     'phpdoc_no_package' => true,
     'phpdoc_no_useless_inheritdoc' => true,
     'phpdoc_order_by_value' => false,
-    'phpdoc_order' => false,
+    'phpdoc_order' => [
+        'order' => [
+            'internal', 'deprecated',
+            'template', 'template-covariant',
+            'extends', 'implements',
+            'type', 'phpstan-type', 'psalm-type',
+            'property', 'property-read', 'property-write',
+            'no-named-arguments',
+            'param', 'return', 'throws',
+            'var',
+        ],
+    ],
     'phpdoc_return_self_reference' => true,
     'phpdoc_scalar' => true,
     'phpdoc_separation' => false,
