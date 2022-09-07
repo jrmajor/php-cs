@@ -51,6 +51,7 @@ return [
 
     // Function Notation
     'combine_nested_dirname' => legacy(),
+    'date_time_create_from_format_call' => false,
     'fopen_flag_order' => rare(),
     'fopen_flags' => rare(['b_mode' => false]),
     'implode_call' => true,
