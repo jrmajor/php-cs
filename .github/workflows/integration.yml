@@ -1,0 +1,81 @@
+name: Integration
+
+on:
+  pull_request:
+  push:
+    branches-ignore: [master]
+
+jobs:
+  integration:
+    name: ${{ matrix.project }}
+
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project:
+          - arbor
+          - bajki-muza
+          - fluent-php
+          - laravel-fluent
+          - pluralrules
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          path: php-cs
+
+      - name: Checkout the other repo
+        uses: actions/checkout@v2
+        with:
+          repository: jrmajor/${{ matrix.project }}
+          path: integration
+
+      - name: Get PHP version
+        id: php-version
+        uses: actions/github-script@v6
+        with:
+          script: | 
+            const fs = require('fs');
+
+            const encoded = fs.readFileSync('integration/composer.json', 'utf8');
+            const decoded = JSON.parse(encoded);
+
+            return decoded.require.php.match(/^[~^]*(\d\.\d)/)[1];
+          result-encoding: string
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ steps.php-version.outputs.result }}
+          coverage: none
+
+      - name: Get Composer cache directory path
+        id: composer-cache-dir
+        working-directory: integration
+        run: |
+          echo "::set-output name=path::$(composer config cache-files-dir)"
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer-cache-dir.outputs.path }}
+          key: composer-${{ matrix.project }}-${{ hashFiles('integration/composer.lock') }}
+          restore-keys: |
+            composer-${{ matrix.project }}-
+            composer-
+
+      - name: Install Composer dependencies
+        working-directory: integration
+        run: |
+          composer config repositories.php-cs path ../php-cs
+          composer remove --dev orchestra/testbench --with-all-dependencies || true
+          composer remove --dev phpunit/phpunit --with-all-dependencies || true
+          composer remove --dev sebastian/diff --with-all-dependencies || true
+          composer require jrmajor/cs:* --with-all-dependencies --no-progress --no-interaction
+
+      - name: Run PHP-CS-Fixer
+        continue-on-error: true
+        working-directory: integration
+        run: vendor/bin/php-cs-fixer fix --dry-run --diff --no-interaction
