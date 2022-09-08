@@ -2,6 +2,24 @@
 
 namespace Major\CS\Rules;
 
+const PhpDocOrder = [
+    'internal', 'deprecated',
+    'no-named-arguments',
+    'type',
+    'template', 'template-covariant',
+    'extends', 'implements',
+    'property', 'property-read', 'property-write',
+    'param', 'return', 'throws',
+    'var',
+];
+
+const PhpDocGroups = [
+    ['template', 'template-covariant'],
+    ['extends', 'implements'],
+    ['property', 'property-read', 'property-write'],
+    ['param', 'return', 'throws'],
+];
+
 return [
     // Alias
     'backtick_to_shell_exec' => true,
@@ -11,7 +29,6 @@ return [
     // Array Notation
     'array_syntax' => true,
     'no_multiline_whitespace_around_double_arrow' => true,
-    'no_trailing_comma_in_singleline_array' => true,
     'no_whitespace_before_comma_in_array' => true,
     'normalize_index_brace' => true,
     'trim_array_spaces' => true,
@@ -22,6 +39,7 @@ return [
     'curly_braces_position' => false,
     'encoding' => true,
     'no_multiple_statements_per_line' => true,
+    'no_trailing_comma_in_singleline' => true,
     'octal_notation' => true,
 
     // Casing
@@ -78,7 +96,6 @@ return [
     'no_alternative_syntax' => ['fix_non_monolithic_code' => false],
     'no_break_comment' => true,
     'no_superfluous_elseif' => true,
-    'no_trailing_comma_in_list_call' => true,
     'no_unneeded_control_parentheses' => [
         'statements' => ['break', 'clone', 'continue', 'echo_print', 'negative_instanceof', 'others', 'return', 'switch_case', 'yield', 'yield_from'],
     ],
@@ -101,7 +118,6 @@ return [
     'lambda_not_used_import' => true,
     'method_argument_space' => ['on_multiline' => 'ignore'],
     'no_spaces_after_function_name' => true,
-    'no_trailing_comma_in_singleline_function_call' => true,
     'nullable_type_declaration_for_default_null_value' => true,
     'return_type_declaration' => true,
     'single_line_throw' => false,
@@ -200,20 +216,13 @@ return [
     'phpdoc_no_useless_inheritdoc' => true,
     'phpdoc_order_by_value' => false,
     'phpdoc_order' => [
-        'order' => [
-            'internal', 'deprecated',
-            'template', 'template-covariant',
-            'extends', 'implements',
-            'type', 'phpstan-type', 'psalm-type',
-            'property', 'property-read', 'property-write',
-            'no-named-arguments',
-            'param', 'return', 'throws',
-            'var',
-        ],
+        'order' => prefixPhpDocTags(PhpDocOrder),
     ],
     'phpdoc_return_self_reference' => true,
     'phpdoc_scalar' => true,
-    'phpdoc_separation' => false,
+    'phpdoc_separation' => [
+        'groups' => prefixPhpDocGroups(PhpDocGroups, PhpDocOrder),
+    ],
     'phpdoc_single_line_var_spacing' => true,
     'phpdoc_summary' => true,
     'phpdoc_tag_casing' => true,

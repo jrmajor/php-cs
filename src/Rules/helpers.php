@@ -55,3 +55,40 @@ function rare($options = true)
 {
     return false;
 }
+
+/**
+ * @param list<string> $group
+ * @return list<string>
+ */
+function prefixPhpDocTags(array $group): array
+{
+    return array_merge(...array_map(function ($tag) {
+        return [$tag, "phpstan-{$tag}", "psalm-{$tag}"];
+    }, $group));
+}
+
+/**
+ * @param list<list<string>> $groups
+ * @param list<string> $allKnownTags
+ * @return list<list<string>>
+ */
+function prefixPhpDocGroups(array $groups, array $allKnownTags): array
+{
+    $allGroupedTags = array_merge(...$groups);
+
+    $prefixedGroups = [];
+
+    foreach ($allKnownTags as $tag) {
+        if (in_array($tag, $allGroupedTags, true)) {
+            continue;
+        }
+
+        $prefixedGroups[] = prefixPhpDocTags([$tag]);
+    }
+
+    foreach (PhpDocGroups as $group) {
+        $prefixedGroups[] = prefixPhpDocTags($group);
+    }
+
+    return $prefixedGroups;
+}
