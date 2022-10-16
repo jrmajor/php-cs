@@ -72,7 +72,7 @@ jobs:
           composer remove --dev orchestra/testbench --with-all-dependencies || true
           composer remove --dev phpunit/phpunit --with-all-dependencies || true
           composer remove --dev sebastian/diff --with-all-dependencies || true
-          composer require jrmajor/cs:* --with-all-dependencies --no-progress --no-interaction
+          composer require jrmajor/cs:* --with-all-dependencies
 
       - name: Run PHP-CS-Fixer
         continue-on-error: true
