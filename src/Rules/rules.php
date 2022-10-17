@@ -162,6 +162,7 @@ return [
     'increment_style' => ['style' => 'post'],
     'new_with_braces' => ['anonymous_class' => false],
     'no_space_around_double_colon' => true,
+    'no_useless_concat_operator' => rare(),
     'no_useless_nullsafe_operator' => StaticAnalysis,
     'not_operator_with_successor_space' => true,
     'object_operator_without_whitespace' => true,
