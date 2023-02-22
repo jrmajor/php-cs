@@ -17,7 +17,6 @@ const PhpDocGroups = [
     ['template', 'template-covariant'],
     ['extends', 'implements'],
     ['property', 'property-read', 'property-write'],
-    ['param', 'return', 'throws'],
 ];
 
 return [

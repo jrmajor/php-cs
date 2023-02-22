@@ -14,6 +14,7 @@ const StaticAnalysis = false;
  * @template T of true|array<string, mixed>
  *
  * @param T $options
+ *
  * @return T|false
  */
 function legacy($options = true)
@@ -31,6 +32,7 @@ function legacy($options = true)
  *
  * @param Ta $after
  * @param Tb $before
+ *
  * @return Ta|Tb
  */
 function version(float $version, $after = true, $before = false)
@@ -49,6 +51,7 @@ function version(float $version, $after = true, $before = false)
  * @template T of true|array<string, mixed>
  *
  * @param T $options
+ *
  * @return false
  */
 function rare($options = true)
@@ -58,6 +61,7 @@ function rare($options = true)
 
 /**
  * @param list<string> $group
+ *
  * @return list<string>
  */
 function prefixPhpDocTags(array $group): array
@@ -70,6 +74,7 @@ function prefixPhpDocTags(array $group): array
 /**
  * @param list<list<string>> $groups
  * @param list<string> $allKnownTags
+ *
  * @return list<list<string>>
  */
 function prefixPhpDocGroups(array $groups, array $allKnownTags): array
