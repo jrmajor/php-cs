@@ -3,8 +3,9 @@ parameters:
     paths:
         - src
         - tests
-    stubFiles:
-        - phpstan.phpstub
+    ignoreErrors:
+        - '#^Cannot call method \w+\(\) on PhpCsFixer\\Tokenizer\\Token\|null\.$#'
+        - '#expects .?callable\(PhpCsFixer\\Tokenizer\\Token\|null\).+, Closure\(PhpCsFixer\\Tokenizer\\Token\).+ given\.$#'
     tmpDir: .cache/phpstan
 
 includes:
