@@ -17,7 +17,6 @@ return [
     F\NoUselessCommentFixer::name() => true,
     F\NoUselessParenthesisFixer::name() => true,
     // F\PhpdocNoSuperfluousParamFixer::name() => true,
-    F\PhpdocParamOrderFixer::name() => true,
     F\PhpdocParamTypeFixer::name() => true,
     F\PhpdocSelfAccessorFixer::name() => true,
     F\PhpdocSingleLineVarFixer::name() => true,

@@ -34,12 +34,12 @@ return [
     'whitespace_after_comma_in_array' => ['ensure_single_space' => true],
 
     // Basic
-    'braces' => false,
     'curly_braces_position' => false,
     'encoding' => true,
     'no_multiple_statements_per_line' => true,
     'no_trailing_comma_in_singleline' => true,
     'octal_notation' => true,
+    'single_line_empty_body' => false,
 
     // Casing
     'class_reference_name_casing' => true,
@@ -71,6 +71,7 @@ return [
     'ordered_class_elements' => [
         'order' => ['use_trait', 'case', 'constant', 'property', 'method_abstract', 'construct', 'method', 'magic'],
     ],
+    'ordered_types' => false,
     'protected_to_private' => true,
     'self_static_accessor' => true,
     'single_class_element_per_statement' => true,
@@ -112,7 +113,6 @@ return [
 
     // Function Notation
     'function_declaration' => true,
-    'function_typehint_space' => true,
     'lambda_not_used_import' => true,
     'method_argument_space' => ['on_multiline' => 'ignore'],
     'no_spaces_after_function_name' => true,
@@ -140,19 +140,17 @@ return [
     'declare_equal_normalize' => true,
     'declare_parentheses' => true,
     'explicit_indirect_variable' => true,
-    'single_space_after_construct' => [
-        'constructs' => ['abstract', 'as', 'attribute', 'break', 'case', 'catch', 'class', 'clone', 'comment', 'const', 'const_import', 'continue', 'do', 'echo', 'else', 'elseif', 'enum', 'extends', 'final', 'finally', 'for', 'foreach', 'function', 'function_import', 'global', 'goto', 'if', 'implements', 'include', 'include_once', 'instanceof', 'insteadof', 'interface', 'match', 'named_argument', 'namespace', 'new', 'open_tag_with_echo', 'php_doc', 'php_open', 'print', 'private', 'protected', 'public', 'readonly', 'require', 'require_once', 'return', 'static', 'switch', 'throw', 'trait', 'try', 'type_colon', 'use', 'use_lambda', 'use_trait', 'var', 'while', 'yield', 'yield_from'],
-    ],
+    'nullable_type_declaration' => true,
+    'single_space_around_construct' => true,
 
     // List Notation
     'list_syntax' => true,
 
     // Namespace Notation
     'blank_line_after_namespace' => true,
+    'blank_lines_before_namespace' => true,
     'clean_namespace' => true,
-    'no_blank_lines_before_namespace' => false,
     'no_leading_namespace_whitespace' => true,
-    'single_blank_line_before_namespace' => true,
 
     // Operator
     'assign_null_coalescing_to_coalesce_equal' => true,
@@ -198,10 +196,7 @@ return [
         'allow_unused_params' => true,
     ],
     'phpdoc_add_missing_param_annotation' => false,
-    'phpdoc_align' => [
-        'tags' => ['param', 'property', 'property-read', 'property-write', 'return', 'throws', 'type', 'var', 'method'],
-        'align' => 'left',
-    ],
+    'phpdoc_align' => ['align' => 'left'],
     'phpdoc_annotation_without_dot' => false,
     'phpdoc_indent' => true,
     'phpdoc_inline_tag_normalizer' => true,
@@ -217,6 +212,7 @@ return [
     'phpdoc_order' => [
         'order' => prefixPhpDocTags(PhpDocOrder),
     ],
+    'phpdoc_param_order' => true,
     'phpdoc_return_self_reference' => true,
     'phpdoc_scalar' => true,
     'phpdoc_separation' => [
@@ -277,5 +273,6 @@ return [
     'no_whitespace_in_blank_line' => true,
     'single_blank_line_at_eof' => true,
     'statement_indentation' => true,
+    'type_declaration_spaces' => true,
     'types_spaces' => true,
 ];

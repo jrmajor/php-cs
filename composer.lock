@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "148ea516632aacc14b6c83209288e061",
+    "content-hash": "e85d84104d2c61c09363d9c0c474f64c",
     "packages": [
         {
             "name": "composer/pcre",
@@ -302,25 +302,29 @@
         },
         {
             "name": "doctrine/deprecations",
-            "version": "v1.0.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/deprecations.git",
-                "reference": "0e2a4f1f8cdfc7a92ec3b01c9334898c806b30de"
+                "reference": "612a3ee5ab0d5dd97b7cf3874a6efe24325efac3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/0e2a4f1f8cdfc7a92ec3b01c9334898c806b30de",
-                "reference": "0e2a4f1f8cdfc7a92ec3b01c9334898c806b30de",
+                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/612a3ee5ab0d5dd97b7cf3874a6efe24325efac3",
+                "reference": "612a3ee5ab0d5dd97b7cf3874a6efe24325efac3",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1|^8.0"
+                "php": "^7.1 || ^8.0"
             },
             "require-dev": {
                 "doctrine/coding-standard": "^9",
-                "phpunit/phpunit": "^7.5|^8.5|^9.5",
-                "psr/log": "^1|^2|^3"
+                "phpstan/phpstan": "1.4.10 || 1.10.15",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5",
+                "psalm/plugin-phpunit": "0.18.4",
+                "psr/log": "^1 || ^2 || ^3",
+                "vimeo/psalm": "4.30.0 || 5.12.0"
             },
             "suggest": {
                 "psr/log": "Allows logging deprecations via PSR-3 logger implementation"
@@ -339,9 +343,9 @@
             "homepage": "https://www.doctrine-project.org/",
             "support": {
                 "issues": "https://github.com/doctrine/deprecations/issues",
-                "source": "https://github.com/doctrine/deprecations/tree/v1.0.0"
+                "source": "https://github.com/doctrine/deprecations/tree/v1.1.1"
             },
-            "time": "2022-05-02T15:47:09+00:00"
+            "time": "2023-06-03T09:27:29+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -423,16 +427,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v3.14.4",
+            "version": "v3.21.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer.git",
-                "reference": "1b3d9dba63d93b8a202c31e824748218781eae6b"
+                "reference": "229b55b3eae4729a8e2a321441ba40fcb3720b86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/1b3d9dba63d93b8a202c31e824748218781eae6b",
-                "reference": "1b3d9dba63d93b8a202c31e824748218781eae6b",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/229b55b3eae4729a8e2a321441ba40fcb3720b86",
+                "reference": "229b55b3eae4729a8e2a321441ba40fcb3720b86",
                 "shasum": ""
             },
             "require": {
@@ -442,7 +446,7 @@
                 "doctrine/lexer": "^2 || ^3",
                 "ext-json": "*",
                 "ext-tokenizer": "*",
-                "php": "^7.4 || ^8.0",
+                "php": "^8.0.1",
                 "sebastian/diff": "^4.0 || ^5.0",
                 "symfony/console": "^5.4 || ^6.0",
                 "symfony/event-dispatcher": "^5.4 || ^6.0",
@@ -499,9 +503,15 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
+            "keywords": [
+                "Static code analysis",
+                "fixer",
+                "standards",
+                "static analysis"
+            ],
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/issues",
-                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.14.4"
+                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.21.1"
             },
             "funding": [
                 {
@@ -509,30 +519,30 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-02-09T21:49:13+00:00"
+            "time": "2023-07-05T21:50:25+00:00"
         },
         {
             "name": "kubawerlos/php-cs-fixer-custom-fixers",
-            "version": "v3.13.0",
+            "version": "v3.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kubawerlos/php-cs-fixer-custom-fixers.git",
-                "reference": "fb53d8bbe2224383a84c71f451d76eb7bc6c8e33"
+                "reference": "82c08eed3cc42dab45241cfd70e99b94cd54ca7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kubawerlos/php-cs-fixer-custom-fixers/zipball/fb53d8bbe2224383a84c71f451d76eb7bc6c8e33",
-                "reference": "fb53d8bbe2224383a84c71f451d76eb7bc6c8e33",
+                "url": "https://api.github.com/repos/kubawerlos/php-cs-fixer-custom-fixers/zipball/82c08eed3cc42dab45241cfd70e99b94cd54ca7e",
+                "reference": "82c08eed3cc42dab45241cfd70e99b94cd54ca7e",
                 "shasum": ""
             },
             "require": {
                 "ext-filter": "*",
                 "ext-tokenizer": "*",
-                "friendsofphp/php-cs-fixer": "^3.6.0",
+                "friendsofphp/php-cs-fixer": "^3.19",
                 "php": "^7.4 || ^8.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^9.5.20"
+                "phpunit/phpunit": "^9.6.4 || ^10.0.14"
             },
             "type": "library",
             "autoload": {
@@ -553,9 +563,9 @@
             "description": "A set of custom fixers for PHP CS Fixer",
             "support": {
                 "issues": "https://github.com/kubawerlos/php-cs-fixer-custom-fixers/issues",
-                "source": "https://github.com/kubawerlos/php-cs-fixer-custom-fixers/tree/v3.13.0"
+                "source": "https://github.com/kubawerlos/php-cs-fixer-custom-fixers/tree/v3.15.0"
             },
-            "time": "2023-02-15T18:51:16+00:00"
+            "time": "2023-06-26T21:00:04+00:00"
         },
         {
             "name": "psr/cache",
@@ -761,16 +771,16 @@
         },
         {
             "name": "sebastian/diff",
-            "version": "4.0.4",
+            "version": "4.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/diff.git",
-                "reference": "3461e3fccc7cfdfc2720be910d3bd73c69be590d"
+                "reference": "74be17022044ebaaecfdf0c5cd504fc9cd5a7131"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/3461e3fccc7cfdfc2720be910d3bd73c69be590d",
-                "reference": "3461e3fccc7cfdfc2720be910d3bd73c69be590d",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/74be17022044ebaaecfdf0c5cd504fc9cd5a7131",
+                "reference": "74be17022044ebaaecfdf0c5cd504fc9cd5a7131",
                 "shasum": ""
             },
             "require": {
@@ -815,7 +825,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/diff/issues",
-                "source": "https://github.com/sebastianbergmann/diff/tree/4.0.4"
+                "source": "https://github.com/sebastianbergmann/diff/tree/4.0.5"
             },
             "funding": [
                 {
@@ -823,7 +833,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-26T13:10:38+00:00"
+            "time": "2023-05-07T05:35:17+00:00"
         },
         {
             "name": "symfony/console",
@@ -2196,16 +2206,16 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.11.0",
+            "version": "1.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "14daed4296fae74d9e3201d2c4925d1acb7aa614"
+                "reference": "7284c22080590fb39f2ffa3e9057f10a4ddd0e0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/14daed4296fae74d9e3201d2c4925d1acb7aa614",
-                "reference": "14daed4296fae74d9e3201d2c4925d1acb7aa614",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/7284c22080590fb39f2ffa3e9057f10a4ddd0e0c",
+                "reference": "7284c22080590fb39f2ffa3e9057f10a4ddd0e0c",
                 "shasum": ""
             },
             "require": {
@@ -2243,7 +2253,7 @@
             ],
             "support": {
                 "issues": "https://github.com/myclabs/DeepCopy/issues",
-                "source": "https://github.com/myclabs/DeepCopy/tree/1.11.0"
+                "source": "https://github.com/myclabs/DeepCopy/tree/1.11.1"
             },
             "funding": [
                 {
@@ -2251,20 +2261,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-03T13:19:32+00:00"
+            "time": "2023-03-08T13:26:56+00:00"
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.15.3",
+            "version": "v4.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "570e980a201d8ed0236b0a62ddf2c9cbb2034039"
+                "reference": "19526a33fb561ef417e822e85f08a00db4059c17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/570e980a201d8ed0236b0a62ddf2c9cbb2034039",
-                "reference": "570e980a201d8ed0236b0a62ddf2c9cbb2034039",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/19526a33fb561ef417e822e85f08a00db4059c17",
+                "reference": "19526a33fb561ef417e822e85f08a00db4059c17",
                 "shasum": ""
             },
             "require": {
@@ -2305,9 +2315,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v4.15.3"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v4.16.0"
             },
-            "time": "2023-01-16T22:05:37+00:00"
+            "time": "2023-06-25T14:52:30+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -2422,26 +2432,22 @@
         },
         {
             "name": "php-cs-fixer/phpunit-constraint-isidenticalstring",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/phpunit-constraint-isidenticalstring.git",
-                "reference": "2bd63d705ff5db3892da10f4df768abaffa8c1e2"
+                "reference": "d26732aaf4a68cc979778224826fc6e312fe7f9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/phpunit-constraint-isidenticalstring/zipball/2bd63d705ff5db3892da10f4df768abaffa8c1e2",
-                "reference": "2bd63d705ff5db3892da10f4df768abaffa8c1e2",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/phpunit-constraint-isidenticalstring/zipball/d26732aaf4a68cc979778224826fc6e312fe7f9c",
+                "reference": "d26732aaf4a68cc979778224826fc6e312fe7f9c",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.5 || ^7.0 || ^8.0",
-                "phpunit/phpunit": "^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.0 || ^9.0",
+                "phpunit/phpunit": "^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.0 || ^9.0 || ^10.0",
                 "phpunitgoodpractices/polyfill": "^1.4"
-            },
-            "require-dev": {
-                "johnkary/phpunit-speedtrap": "^1.1 || ^2.0 || ^3.0",
-                "symfony/phpunit-bridge": "^3.2.2 || ^4.0"
             },
             "type": "library",
             "autoload": {
@@ -2465,22 +2471,22 @@
             "description": "Constraint for testing strings considering not-same line endings.",
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/phpunit-constraint-isidenticalstring/issues",
-                "source": "https://github.com/PHP-CS-Fixer/phpunit-constraint-isidenticalstring/tree/v1.2.0"
+                "source": "https://github.com/PHP-CS-Fixer/phpunit-constraint-isidenticalstring/tree/v1.3.0"
             },
-            "time": "2020-10-20T01:38:06+00:00"
+            "time": "2023-03-11T16:00:55+00:00"
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.10.1",
+            "version": "1.10.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "1cd5fc530a8b68702f3733ad64294b2a39564198"
+                "reference": "578f4e70d117f9a90699324c555922800ac38d8c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/1cd5fc530a8b68702f3733ad64294b2a39564198",
-                "reference": "1cd5fc530a8b68702f3733ad64294b2a39564198",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/578f4e70d117f9a90699324c555922800ac38d8c",
+                "reference": "578f4e70d117f9a90699324c555922800ac38d8c",
                 "shasum": ""
             },
             "require": {
@@ -2509,8 +2515,11 @@
                 "static analysis"
             ],
             "support": {
+                "docs": "https://phpstan.org/user-guide/getting-started",
+                "forum": "https://github.com/phpstan/phpstan/discussions",
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/1.10.1"
+                "security": "https://github.com/phpstan/phpstan/security/policy",
+                "source": "https://github.com/phpstan/phpstan-src"
             },
             "funding": [
                 {
@@ -2526,20 +2535,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-21T21:57:23+00:00"
+            "time": "2023-07-06T12:11:37+00:00"
         },
         {
             "name": "phpstan/phpstan-phpunit",
-            "version": "1.3.7",
+            "version": "1.3.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan-phpunit.git",
-                "reference": "7e43c8f77c7e419730ead01c8dc787c6bcbe0e15"
+                "reference": "d8bdab0218c5eb0964338d24a8511b65e9c94fa5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan-phpunit/zipball/7e43c8f77c7e419730ead01c8dc787c6bcbe0e15",
-                "reference": "7e43c8f77c7e419730ead01c8dc787c6bcbe0e15",
+                "url": "https://api.github.com/repos/phpstan/phpstan-phpunit/zipball/d8bdab0218c5eb0964338d24a8511b65e9c94fa5",
+                "reference": "d8bdab0218c5eb0964338d24a8511b65e9c94fa5",
                 "shasum": ""
             },
             "require": {
@@ -2576,29 +2585,29 @@
             "description": "PHPUnit extensions and rules for PHPStan",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan-phpunit/issues",
-                "source": "https://github.com/phpstan/phpstan-phpunit/tree/1.3.7"
+                "source": "https://github.com/phpstan/phpstan-phpunit/tree/1.3.13"
             },
-            "time": "2023-02-21T18:40:15+00:00"
+            "time": "2023-05-26T11:05:59+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "9.2.24",
+            "version": "9.2.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "2cf940ebc6355a9d430462811b5aaa308b174bed"
+                "reference": "443bc6912c9bd5b409254a40f4b0f4ced7c80ea1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/2cf940ebc6355a9d430462811b5aaa308b174bed",
-                "reference": "2cf940ebc6355a9d430462811b5aaa308b174bed",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/443bc6912c9bd5b409254a40f4b0f4ced7c80ea1",
+                "reference": "443bc6912c9bd5b409254a40f4b0f4ced7c80ea1",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-libxml": "*",
                 "ext-xmlwriter": "*",
-                "nikic/php-parser": "^4.14",
+                "nikic/php-parser": "^4.15",
                 "php": ">=7.3",
                 "phpunit/php-file-iterator": "^3.0.3",
                 "phpunit/php-text-template": "^2.0.2",
@@ -2613,8 +2622,8 @@
                 "phpunit/phpunit": "^9.3"
             },
             "suggest": {
-                "ext-pcov": "*",
-                "ext-xdebug": "*"
+                "ext-pcov": "PHP extension that provides line coverage",
+                "ext-xdebug": "PHP extension that provides line coverage as well as branch and path coverage"
             },
             "type": "library",
             "extra": {
@@ -2647,7 +2656,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.24"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.26"
             },
             "funding": [
                 {
@@ -2655,7 +2664,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-01-26T08:26:55+00:00"
+            "time": "2023-03-06T12:58:08+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -2900,16 +2909,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.6.3",
+            "version": "9.6.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "e7b1615e3e887d6c719121c6d4a44b0ab9645555"
+                "reference": "a9aceaf20a682aeacf28d582654a1670d8826778"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e7b1615e3e887d6c719121c6d4a44b0ab9645555",
-                "reference": "e7b1615e3e887d6c719121c6d4a44b0ab9645555",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a9aceaf20a682aeacf28d582654a1670d8826778",
+                "reference": "a9aceaf20a682aeacf28d582654a1670d8826778",
                 "shasum": ""
             },
             "require": {
@@ -2942,8 +2951,8 @@
                 "sebastian/version": "^3.0.2"
             },
             "suggest": {
-                "ext-soap": "*",
-                "ext-xdebug": "*"
+                "ext-soap": "To be able to generate mocks based on WSDL files",
+                "ext-xdebug": "PHP extension that provides line coverage as well as branch and path coverage"
             },
             "bin": [
                 "phpunit"
@@ -2982,7 +2991,8 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.3"
+                "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.9"
             },
             "funding": [
                 {
@@ -2998,25 +3008,25 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-04T13:37:15+00:00"
+            "time": "2023-06-11T06:13:56+00:00"
         },
         {
             "name": "phpunitgoodpractices/polyfill",
-            "version": "v1.6.0",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPUnitGoodPractices/polyfill.git",
-                "reference": "625622fc35e922c04f28e448b43d85972be95040"
+                "reference": "0593935b3593de7eeea75b9a2b56e9d56f95fca8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPUnitGoodPractices/polyfill/zipball/625622fc35e922c04f28e448b43d85972be95040",
-                "reference": "625622fc35e922c04f28e448b43d85972be95040",
+                "url": "https://api.github.com/repos/PHPUnitGoodPractices/polyfill/zipball/0593935b3593de7eeea75b9a2b56e9d56f95fca8",
+                "reference": "0593935b3593de7eeea75b9a2b56e9d56f95fca8",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.5 || ^7.0 || ^8.0",
-                "phpunit/phpunit": "^4.8.36 || ^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.0 || ^9.0"
+                "phpunit/phpunit": "^4.8.36 || ^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.0 || ^9.0 || ^10.0"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2",
@@ -3044,9 +3054,9 @@
             "description": "Lacking future-compat polyfills for PHPUnit.",
             "support": {
                 "issues": "https://github.com/PHPUnitGoodPractices/polyfill/issues",
-                "source": "https://github.com/PHPUnitGoodPractices/polyfill/tree/v1.6.0"
+                "source": "https://github.com/PHPUnitGoodPractices/polyfill/tree/v1.7.0"
             },
-            "time": "2022-08-29T17:28:48+00:00"
+            "time": "2023-03-07T19:09:37+00:00"
         },
         {
             "name": "sebastian/cli-parser",

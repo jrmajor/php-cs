@@ -11,8 +11,8 @@
     "homepage": "https://github.com/jrmajor/php-cs",
     "require": {
         "php": "8.0 - 8.2",
-        "friendsofphp/php-cs-fixer": "^3.14",
-        "kubawerlos/php-cs-fixer-custom-fixers": "^3.13"
+        "friendsofphp/php-cs-fixer": "^3.21",
+        "kubawerlos/php-cs-fixer-custom-fixers": "^3.15"
     },
     "require-dev": {
         "php-cs-fixer/phpunit-constraint-isidenticalstring": "^1.2",
