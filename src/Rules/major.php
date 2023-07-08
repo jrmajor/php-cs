@@ -6,4 +6,5 @@ use Major\CS\Fixers as F;
 
 return [
     F\NoWhitespaceInEmptyArray::name() => true,
+    F\SingleLineEmptyBody::name() => true,
 ];

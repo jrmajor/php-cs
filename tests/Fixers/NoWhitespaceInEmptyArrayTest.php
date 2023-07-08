@@ -27,7 +27,7 @@ final class NoWhitespaceInEmptyArrayTest extends FixerTest
         $this->doTest($expected, $input);
     }
 
-    public function provideFixCases(): Generator
+    public static function provideFixCases(): Generator
     {
         yield [
             "<?php\n\n\$foo = [];\n",

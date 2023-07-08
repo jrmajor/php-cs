@@ -17,6 +17,9 @@ final class Fixers implements IteratorAggregate
      */
     public function getIterator(): Generator
     {
-        yield new F\NoWhitespaceInEmptyArray();
+        yield from [
+            new F\NoWhitespaceInEmptyArray(),
+            new F\SingleLineEmptyBody(),
+        ];
     }
 }
