@@ -50,6 +50,8 @@ jobs:
         with:
           php-version: ${{ steps.php-version.outputs.result }}
           coverage: none
+        env:
+          GITHUB_TOKEN: ${{ secrets.COMPOSER_GITHUB_TOKEN }}
 
       - name: Get Composer cache directory path
         id: composer-cache-dir
@@ -68,11 +70,12 @@ jobs:
       - name: Install Composer dependencies
         working-directory: integration
         run: |
+          sed -i 's+"minimum-stability": "stable"+"minimum-stability": "dev"+g' composer.json
           composer config repositories.php-cs path ../php-cs
-          composer remove --dev orchestra/testbench --with-all-dependencies || true
-          composer remove --dev phpunit/phpunit --with-all-dependencies || true
-          composer remove --dev sebastian/diff --with-all-dependencies || true
-          composer require jrmajor/cs:* --with-all-dependencies
+          composer remove --dev orchestra/testbench --no-update --unused || true
+          composer remove --dev phpunit/phpunit --no-update --unused || true
+          composer remove --dev sebastian/diff --no-update --unused || true
+          composer require --dev jrmajor/cs:* --with-all-dependencies
 
       - name: Run PHP-CS-Fixer
         continue-on-error: true
