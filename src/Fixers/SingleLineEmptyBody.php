@@ -2,11 +2,11 @@
 
 namespace Major\CS\Fixers;
 
+use InvalidArgumentException;
 use PhpCsFixer\FixerDefinition\CodeSample;
 use PhpCsFixer\FixerDefinition\FixerDefinition;
 use PhpCsFixer\FixerDefinition\FixerDefinitionInterface;
 use PhpCsFixer\Tokenizer\Tokens;
-use PhpCsFixer\Tokenizer\TokensAnalyzer;
 use SplFileInfo;
 
 final class SingleLineEmptyBody extends AbstractFixer
@@ -34,8 +34,6 @@ final class SingleLineEmptyBody extends AbstractFixer
 
     public function fix(SplFileInfo $file, Tokens $tokens): void
     {
-        $analyzer = new TokensAnalyzer($tokens);
-
         for ($index = $tokens->count() - 1; $index > 0; $index--) {
             if (
                 $tokens[$index]->isGivenKind([T_CLASS])
@@ -46,7 +44,7 @@ final class SingleLineEmptyBody extends AbstractFixer
 
             if (
                 $tokens[$index]->isGivenKind([T_FUNCTION])
-                && $this->shouldFixFunction($index, $tokens, $analyzer)
+                && $this->shouldFixFunction($index, $tokens)
             ) {
                 $this->doFix($index, $tokens);
             }
@@ -62,11 +60,8 @@ final class SingleLineEmptyBody extends AbstractFixer
         return $tokens[$previousIndex]->isGivenKind(T_NEW);
     }
 
-    private function shouldFixFunction(
-        int $index,
-        Tokens $tokens,
-        TokensAnalyzer $analyzer,
-    ): bool {
+    private function shouldFixFunction(int $index, Tokens $tokens): bool
+    {
         $nextIndex = $tokens->getNextMeaningfulToken($index);
 
         if ($tokens[$nextIndex]->equals('(')) {
@@ -77,7 +72,39 @@ final class SingleLineEmptyBody extends AbstractFixer
 
         assert($argListStart !== null);
 
-        return $analyzer->isBlockMultiline($tokens, $argListStart);
+        return $this->isBlockMultiline($tokens, $argListStart);
+    }
+
+    private function isBlockMultiline(Tokens $tokens, int $index): bool
+    {
+        $blockType = Tokens::detectBlockType($tokens[$index]);
+
+        if ($blockType === null || ! $blockType['isStart']) {
+            throw new InvalidArgumentException("There is no block start at index {$index}.");
+        }
+
+        $endIndex = $tokens->findBlockEnd($blockType['type'], $index);
+
+        for (++$index; $index < $endIndex; $index++) {
+            $token = $tokens[$index];
+            $blockType = Tokens::detectBlockType($token);
+
+            if ($blockType !== null && $blockType['isStart']) {
+                $index = $tokens->findBlockEnd($blockType['type'], $index);
+
+                continue;
+            }
+
+            if (
+                $token->isWhitespace()
+                && ! $tokens[$index - 1]->isGivenKind(T_END_HEREDOC)
+                && str_contains($token->getContent(), "\n")
+            ) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private function doFix(int $index, Tokens $tokens): void
