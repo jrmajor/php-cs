@@ -34,7 +34,7 @@ return [
     'whitespace_after_comma_in_array' => ['ensure_single_space' => true],
 
     // Basic
-    'curly_braces_position' => false,
+    'curly_braces_position' => true,
     'encoding' => true,
     'no_multiple_statements_per_line' => true,
     'no_trailing_comma_in_singleline' => true,
