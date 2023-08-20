@@ -30,8 +30,10 @@ return [
     'no_multiline_whitespace_around_double_arrow' => true,
     'no_whitespace_before_comma_in_array' => true,
     'normalize_index_brace' => true,
+    'return_to_yield_from' => false,
     'trim_array_spaces' => true,
     'whitespace_after_comma_in_array' => ['ensure_single_space' => true],
+    'yield_from_array_to_yields' => false,
 
     // Basic
     'curly_braces_position' => true,
@@ -285,10 +287,10 @@ return [
         ],
     ],
     'no_spaces_around_offset' => true,
-    'no_spaces_inside_parenthesis' => true,
     'no_trailing_whitespace' => true,
     'no_whitespace_in_blank_line' => true,
     'single_blank_line_at_eof' => true,
+    'spaces_inside_parentheses' => true,
     'statement_indentation' => true,
     'type_declaration_spaces' => true,
     'types_spaces' => true,
