@@ -69,7 +69,10 @@ return [
     'no_blank_lines_after_class_opening' => true,
     'no_null_property_initialization' => true,
     'ordered_class_elements' => [
-        'order' => ['use_trait', 'case', 'constant', 'property', 'method_abstract', 'construct', 'method', 'magic'],
+        'order' => [
+            'use_trait', 'case', 'constant', 'property',
+            'method_abstract', 'construct', 'method', 'magic',
+        ],
     ],
     'ordered_types' => false,
     'protected_to_private' => true,
@@ -97,7 +100,10 @@ return [
     'no_break_comment' => true,
     'no_superfluous_elseif' => true,
     'no_unneeded_control_parentheses' => [
-        'statements' => ['break', 'clone', 'continue', 'echo_print', 'negative_instanceof', 'others', 'return', 'switch_case', 'yield', 'yield_from'],
+        'statements' => [
+            'break', 'clone', 'continue', 'echo_print', 'negative_instanceof',
+            'others', 'return', 'switch_case', 'yield', 'yield_from',
+        ],
     ],
     'no_unneeded_curly_braces' => true,
     // 'no_useless_else' => true,
@@ -122,7 +128,11 @@ return [
 
     // Import
     'fully_qualified_strict_types' => true,
-    'global_namespace_import' => ['import_classes' => true, 'import_constants' => true, 'import_functions' => true],
+    'global_namespace_import' => [
+        'import_classes' => true,
+        'import_constants' => true,
+        'import_functions' => true,
+    ],
     'group_import' => false,
     'no_leading_import_slash' => true,
     'no_unneeded_import_alias' => true,
@@ -256,7 +266,11 @@ return [
     // Whitespace
     'array_indentation' => true,
     'blank_line_before_statement' => [
-        'statements' => ['break', 'continue', 'declare', 'do', 'exit', 'for', 'foreach', 'goto', 'if', 'include', 'include_once', 'require', 'require_once', 'return', 'switch', 'throw', 'try', 'while', 'yield', 'yield_from'],
+        'statements' => [
+            'break', 'case', 'continue', 'declare', 'default', 'do', 'exit', 'for',
+            'foreach', 'goto', 'if', 'include', 'include_once', 'require', 'require_once',
+            'return', 'switch', 'throw', 'try', 'while', 'yield', 'yield_from',
+        ],
     ],
     'blank_line_between_import_groups' => true,
     'compact_nullable_typehint' => true,
@@ -265,7 +279,10 @@ return [
     'line_ending' => true,
     'method_chaining_indentation' => true,
     'no_extra_blank_lines' => [
-        'tokens' => ['attribute', 'case', 'continue', 'curly_brace_block', 'default', 'extra', 'parenthesis_brace_block', 'switch', 'throw'],
+        'tokens' => [
+            'attribute', 'case', 'continue', 'curly_brace_block', 'default',
+            'extra', 'parenthesis_brace_block', 'switch', 'throw',
+        ],
     ],
     'no_spaces_around_offset' => true,
     'no_spaces_inside_parenthesis' => true,
