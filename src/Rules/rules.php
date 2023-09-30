@@ -39,7 +39,7 @@ return [
     'attribute_empty_parentheses' => true,
 
     // Basic
-    'curly_braces_position' => true,
+    'braces_position' => true,
     'encoding' => true,
     'no_multiple_statements_per_line' => true,
     'no_trailing_comma_in_singleline' => true,
@@ -55,7 +55,7 @@ return [
     'magic_constant_casing' => true,
     'magic_method_casing' => true,
     'native_function_casing' => true,
-    'native_function_type_declaration_casing' => true,
+    'native_type_declaration_casing' => true,
 
     // Cast Notation
     'cast_spaces' => true,
@@ -110,7 +110,7 @@ return [
             'others', 'return', 'switch_case', 'yield', 'yield_from',
         ],
     ],
-    'no_unneeded_curly_braces' => true,
+    'no_unneeded_braces' => true,
     // 'no_useless_else' => true,
     // 'simplified_if_return' => true,
     'switch_case_semicolon_to_colon' => true,
@@ -172,8 +172,8 @@ return [
     'binary_operator_spaces' => true,
     'concat_space' => ['spacing' => 'one'],
     'increment_style' => ['style' => 'post'],
-    'new_with_braces' => ['anonymous_class' => false],
     'long_to_shorthand_operator' => true,
+    'new_with_parentheses' => ['anonymous_class' => false],
     'no_space_around_double_colon' => true,
     'no_useless_concat_operator' => rare(),
     'no_useless_nullsafe_operator' => StaticAnalysis,
@@ -279,7 +279,7 @@ return [
         ],
     ],
     'blank_line_between_import_groups' => true,
-    'compact_nullable_typehint' => true,
+    'compact_nullable_type_declaration' => true,
     'heredoc_indentation' => true,
     'indentation_type' => true,
     'line_ending' => true,
