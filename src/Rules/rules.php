@@ -125,7 +125,7 @@ return [
     // Function Notation
     'function_declaration' => true,
     'lambda_not_used_import' => true,
-    'method_argument_space' => ['on_multiline' => 'ignore'],
+    'method_argument_space' => ['on_multiline' => 'ignore', 'attribute_placement' => 'ignore'],
     'no_spaces_after_function_name' => true,
     'nullable_type_declaration_for_default_null_value' => true,
     'return_type_declaration' => true,
