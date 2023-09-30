@@ -35,6 +35,9 @@ return [
     'whitespace_after_comma_in_array' => ['ensure_single_space' => true],
     'yield_from_array_to_yields' => false,
 
+    // Attribute Notation
+    'attribute_empty_parentheses' => true,
+
     // Basic
     'curly_braces_position' => true,
     'encoding' => true,
@@ -170,6 +173,7 @@ return [
     'concat_space' => ['spacing' => 'one'],
     'increment_style' => ['style' => 'post'],
     'new_with_braces' => ['anonymous_class' => false],
+    'long_to_shorthand_operator' => true,
     'no_space_around_double_colon' => true,
     'no_useless_concat_operator' => rare(),
     'no_useless_nullsafe_operator' => StaticAnalysis,
