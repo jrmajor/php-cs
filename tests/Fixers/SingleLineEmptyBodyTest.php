@@ -4,8 +4,9 @@ namespace Major\CS\Tests\Fixers;
 
 use Generator;
 use Major\CS\Fixers\SingleLineEmptyBody;
-use Major\CS\Tests\FixerTest;
+use Major\CS\Tests\FixerTestCase;
 use PhpCsFixer\Fixer\FixerInterface;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 /**
  * This test is copied from PHP-CS-Fixer repository with only minor changes,
@@ -14,7 +15,7 @@ use PhpCsFixer\Fixer\FixerInterface;
  * @see https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/8ac301a/tests/Fixer/Basic/SingleLineEmptyBodyFixerTest.php
  * @see https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/8ac301a/LICENSE
  */
-final class SingleLineEmptyBodyTest extends FixerTest
+final class SingleLineEmptyBodyTest extends FixerTestCase
 {
     protected function createFixer(): FixerInterface
     {
@@ -26,9 +27,7 @@ final class SingleLineEmptyBodyTest extends FixerTest
         $this->assertSame('Major/single_line_empty_body', $this->fixer->getName());
     }
 
-    /**
-     * @dataProvider provideFixCases
-     */
+    #[DataProvider('provideFixCases')]
     public function testFix(string $expected, ?string $input = null): void
     {
         $this->doTest($expected, $input);

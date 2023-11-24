@@ -40,7 +40,7 @@ use PhpCsFixer\Tokenizer\Tokens;
 use PHPUnit\Framework\TestCase;
 use SplFileInfo;
 
-abstract class FixerTest extends TestCase
+abstract class FixerTestCase extends TestCase
 {
     use AssertTokens;
 

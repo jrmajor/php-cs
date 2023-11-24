@@ -4,10 +4,11 @@ namespace Major\CS\Tests\Fixers;
 
 use Generator;
 use Major\CS\Fixers\NoWhitespaceInEmptyArray;
-use Major\CS\Tests\FixerTest;
+use Major\CS\Tests\FixerTestCase;
 use PhpCsFixer\Fixer\FixerInterface;
+use PHPUnit\Framework\Attributes\DataProvider;
 
-final class NoWhitespaceInEmptyArrayTest extends FixerTest
+final class NoWhitespaceInEmptyArrayTest extends FixerTestCase
 {
     protected function createFixer(): FixerInterface
     {
@@ -19,9 +20,7 @@ final class NoWhitespaceInEmptyArrayTest extends FixerTest
         $this->assertSame('Major/no_whitespace_in_empty_array', $this->fixer->getName());
     }
 
-    /**
-     * @dataProvider provideFixCases
-     */
+    #[DataProvider('provideFixCases')]
     public function testFix(string $expected, ?string $input = null): void
     {
         $this->doTest($expected, $input);
