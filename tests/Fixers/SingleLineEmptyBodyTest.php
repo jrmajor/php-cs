@@ -6,6 +6,7 @@ use Generator;
 use Major\CS\Fixers\SingleLineEmptyBody;
 use Major\CS\Tests\FixerTestCase;
 use PhpCsFixer\Fixer\FixerInterface;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 /**
  * This test is copied from PHP-CS-Fixer repository with only minor changes,
@@ -26,9 +27,7 @@ final class SingleLineEmptyBodyTest extends FixerTestCase
         $this->assertSame('Major/single_line_empty_body', $this->fixer->getName());
     }
 
-    /**
-     * @dataProvider provideFixCases
-     */
+    #[DataProvider('provideFixCases')]
     public function testFix(string $expected, ?string $input = null): void
     {
         $this->doTest($expected, $input);
