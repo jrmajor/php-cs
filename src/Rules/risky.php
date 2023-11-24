@@ -7,7 +7,7 @@ return [
     'array_push' => true,
     'ereg_to_preg' => legacy(),
     'mb_str_functions' => false,
-    'modernize_strpos' => version(8.0),
+    'modernize_strpos' => true,
     'no_alias_functions' => ['sets' => ['@all']],
     'pow_to_exponentiation' => true,
     // Risky when relying on the seed based generating of the numbers.
@@ -31,7 +31,7 @@ return [
     // Risky when old style constructor is overridden or overrides parent one.
     'no_php4_constructor' => legacy(),
     // Risky when child class overrides a private method on PHP < 8.0.
-    'no_unneeded_final_method' => version(8.0),
+    'no_unneeded_final_method' => true,
     // Risky for implements when specifying both an interface and its parent,
     // because PHP does not break on parent, child but does on child, parent.
     'ordered_interfaces' => true,

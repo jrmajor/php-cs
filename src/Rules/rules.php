@@ -118,7 +118,7 @@ return [
     'switch_continue_to_break' => true,
     'trailing_comma_in_multiline' => [
         'after_heredoc' => true,
-        'elements' => version(8.0, ['arrays', 'arguments', 'parameters', 'match'], ['arrays', 'arguments']),
+        'elements' => ['arrays', 'arguments', 'parameters', 'match'],
     ],
     'yoda_style' => ['equal' => false, 'identical' => false, 'less_and_greater' => false],
 
