@@ -4,7 +4,7 @@ namespace Major\CS\Tests\Fixers;
 
 use Generator;
 use Major\CS\Fixers\SingleLineEmptyBody;
-use Major\CS\Tests\FixerTest;
+use Major\CS\Tests\FixerTestCase;
 use PhpCsFixer\Fixer\FixerInterface;
 
 /**
@@ -14,7 +14,7 @@ use PhpCsFixer\Fixer\FixerInterface;
  * @see https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/8ac301a/tests/Fixer/Basic/SingleLineEmptyBodyFixerTest.php
  * @see https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/8ac301a/LICENSE
  */
-final class SingleLineEmptyBodyTest extends FixerTest
+final class SingleLineEmptyBodyTest extends FixerTestCase
 {
     protected function createFixer(): FixerInterface
     {

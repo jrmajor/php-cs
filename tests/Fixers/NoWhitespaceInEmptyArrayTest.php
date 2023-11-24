@@ -4,10 +4,10 @@ namespace Major\CS\Tests\Fixers;
 
 use Generator;
 use Major\CS\Fixers\NoWhitespaceInEmptyArray;
-use Major\CS\Tests\FixerTest;
+use Major\CS\Tests\FixerTestCase;
 use PhpCsFixer\Fixer\FixerInterface;
 
-final class NoWhitespaceInEmptyArrayTest extends FixerTest
+final class NoWhitespaceInEmptyArrayTest extends FixerTestCase
 {
     protected function createFixer(): FixerInterface
     {
