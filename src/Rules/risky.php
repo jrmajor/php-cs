@@ -37,6 +37,7 @@ return [
     'ordered_interfaces' => true,
     // Risky when depending on order of the imports.
     'ordered_traits' => true,
+    'phpdoc_readonly_class_comment_to_keyword' => StaticAnalysis,
     // Risky when using dynamic calls like get_called_class() or late static binding.
     'self_accessor' => true,
 
@@ -78,6 +79,7 @@ return [
 
     // Operator
     'logical_operators' => true,
+    'long_to_shorthand_operator' => true,
     'ternary_to_elvis_operator' => true,
 
     // Strict

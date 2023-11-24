@@ -172,7 +172,6 @@ return [
     'binary_operator_spaces' => true,
     'concat_space' => ['spacing' => 'one'],
     'increment_style' => ['style' => 'post'],
-    'long_to_shorthand_operator' => true,
     'new_with_parentheses' => ['anonymous_class' => false],
     'no_space_around_double_colon' => true,
     'no_useless_concat_operator' => rare(),
