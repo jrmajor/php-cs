@@ -22,12 +22,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: php-cs
 
       - name: Checkout the other repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: jrmajor/${{ matrix.project }}
           path: integration
