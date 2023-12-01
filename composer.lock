@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a948d3e38426193c0560101aa8086b5d",
+    "content-hash": "84fd064906b9953cfbe7fe3919bac771",
     "packages": [
         {
             "name": "composer/pcre",
@@ -2103,22 +2103,21 @@
         },
         {
             "name": "php-cs-fixer/phpunit-constraint-isidenticalstring",
-            "version": "v1.3.0",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/phpunit-constraint-isidenticalstring.git",
-                "reference": "d26732aaf4a68cc979778224826fc6e312fe7f9c"
+                "reference": "4a5ced7f61cdb2fe80b884c2403b325bbcb13608"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/phpunit-constraint-isidenticalstring/zipball/d26732aaf4a68cc979778224826fc6e312fe7f9c",
-                "reference": "d26732aaf4a68cc979778224826fc6e312fe7f9c",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/phpunit-constraint-isidenticalstring/zipball/4a5ced7f61cdb2fe80b884c2403b325bbcb13608",
+                "reference": "4a5ced7f61cdb2fe80b884c2403b325bbcb13608",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.5 || ^7.0 || ^8.0",
-                "phpunit/phpunit": "^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.0 || ^9.0 || ^10.0",
-                "phpunitgoodpractices/polyfill": "^1.4"
+                "php": "^7.0 || ^8.0",
+                "phpunit/phpunit": "^6.5.14 || ^7.5.20 || ^8.0 || ^9.0 || ^10.0"
             },
             "type": "library",
             "autoload": {
@@ -2142,22 +2141,22 @@
             "description": "Constraint for testing strings considering not-same line endings.",
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/phpunit-constraint-isidenticalstring/issues",
-                "source": "https://github.com/PHP-CS-Fixer/phpunit-constraint-isidenticalstring/tree/v1.3.0"
+                "source": "https://github.com/PHP-CS-Fixer/phpunit-constraint-isidenticalstring/tree/v1.4.0"
             },
-            "time": "2023-03-11T16:00:55+00:00"
+            "time": "2023-11-25T20:17:05+00:00"
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.10.44",
+            "version": "1.10.46",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "bf84367c53a23f759513985c54ffe0d0c249825b"
+                "reference": "90d3d25c5b98b8068916bbf08ce42d5cb6c54e70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/bf84367c53a23f759513985c54ffe0d0c249825b",
-                "reference": "bf84367c53a23f759513985c54ffe0d0c249825b",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/90d3d25c5b98b8068916bbf08ce42d5cb6c54e70",
+                "reference": "90d3d25c5b98b8068916bbf08ce42d5cb6c54e70",
                 "shasum": ""
             },
             "require": {
@@ -2206,7 +2205,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-11-21T16:30:46+00:00"
+            "time": "2023-11-28T14:57:26+00:00"
         },
         {
             "name": "phpstan/phpstan-phpunit",
@@ -2583,16 +2582,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.4.2",
+            "version": "10.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "cacd8b9dd224efa8eb28beb69004126c7ca1a1a1"
+                "reference": "80cab181aebc2efac422940443e28db556137637"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/cacd8b9dd224efa8eb28beb69004126c7ca1a1a1",
-                "reference": "cacd8b9dd224efa8eb28beb69004126c7ca1a1a1",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/80cab181aebc2efac422940443e28db556137637",
+                "reference": "80cab181aebc2efac422940443e28db556137637",
                 "shasum": ""
             },
             "require": {
@@ -2632,7 +2631,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "10.4-dev"
+                    "dev-main": "10.5-dev"
                 }
             },
             "autoload": {
@@ -2664,7 +2663,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.4.2"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.0"
             },
             "funding": [
                 {
@@ -2680,56 +2679,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-10-26T07:21:45+00:00"
-        },
-        {
-            "name": "phpunitgoodpractices/polyfill",
-            "version": "v1.7.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PHPUnitGoodPractices/polyfill.git",
-                "reference": "0593935b3593de7eeea75b9a2b56e9d56f95fca8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PHPUnitGoodPractices/polyfill/zipball/0593935b3593de7eeea75b9a2b56e9d56f95fca8",
-                "reference": "0593935b3593de7eeea75b9a2b56e9d56f95fca8",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.5 || ^7.0 || ^8.0",
-                "phpunit/phpunit": "^4.8.36 || ^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.0 || ^9.0 || ^10.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2",
-                "php-coveralls/php-coveralls": "^2.4"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/aliases.php"
-                ],
-                "psr-4": {
-                    "PHPUnitGoodPractices\\Polyfill\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dariusz Rumiński",
-                    "email": "dariusz.ruminski@gmail.com"
-                }
-            ],
-            "description": "Lacking future-compat polyfills for PHPUnit.",
-            "support": {
-                "issues": "https://github.com/PHPUnitGoodPractices/polyfill/issues",
-                "source": "https://github.com/PHPUnitGoodPractices/polyfill/tree/v1.7.0"
-            },
-            "abandoned": true,
-            "time": "2023-03-07T19:09:37+00:00"
+            "time": "2023-12-01T06:12:50+00:00"
         },
         {
             "name": "sebastian/cli-parser",
