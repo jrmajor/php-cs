@@ -132,7 +132,7 @@ return [
     'single_line_throw' => false,
 
     // Import
-    'fully_qualified_strict_types' => true,
+    'fully_qualified_strict_types' => false,
     'global_namespace_import' => [
         'import_classes' => true,
         'import_constants' => true,
