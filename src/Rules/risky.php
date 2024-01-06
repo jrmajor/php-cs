@@ -68,6 +68,7 @@ return [
     'void_return' => StaticAnalysis,
 
     // Language Construct
+    'class_keyword' => false,
     'dir_constant' => legacy(),
     'error_suppression' => false,
     'function_to_constant' => true,
