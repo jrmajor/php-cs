@@ -294,7 +294,9 @@ return [
     'no_whitespace_in_blank_line' => true,
     'single_blank_line_at_eof' => true,
     'spaces_inside_parentheses' => true,
-    'statement_indentation' => true,
+    'statement_indentation' => [
+        'stick_comment_to_next_continuous_control_statement' => true,
+    ],
     'type_declaration_spaces' => true,
     'types_spaces' => true,
 ];
