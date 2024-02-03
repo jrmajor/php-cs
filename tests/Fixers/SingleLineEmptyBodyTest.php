@@ -89,15 +89,17 @@ final class SingleLineEmptyBodyTest extends FixerTestCase
         ];
 
         yield 'multiple functions' => [
-            '<?php
+            <<<'PHP'
+                <?php
                 function ()    { return 1; };
                 function foo(
                 ) { }
                 function () { };
                 function () { };
                 function (){ return 1; };
-            ',
-            '<?php
+                PHP,
+            <<<'PHP'
+                <?php
                 function ()    { return 1; };
                 function foo(
                 )
@@ -108,65 +110,73 @@ final class SingleLineEmptyBodyTest extends FixerTestCase
                 {
                 };
                 function (){ return 1; };
-            ',
+                PHP,
         ];
 
         yield 'ensure single space' => [
-            '<?php
+            <<<'PHP'
+                <?php
                 function () { };
                 function foo(
                 ) { }
                 function () { };
-            ',
-            '<?php
+                PHP,
+            <<<'PHP'
+                <?php
                 function () {};
                 function foo(
                 ) {  }
                 function () {    };
-            ',
+                PHP,
         ];
 
         yield 'add spaces' => [
-            '<?php
+            <<<'PHP'
+                <?php
                 function () { };
                 function foo(
                 ) { }
                 function () { };
-            ',
-            '<?php
+                PHP,
+            <<<'PHP'
+                <?php
                 function (){ };
                 function foo(
                 ){ }
                 function (){ };
-            ',
+                PHP,
         ];
 
         yield 'with return types' => [
-            '<?php
+            <<<'PHP'
+                <?php
                 function (): void { };
                 function foo(
-                ): \\Foo\\Bar { }
+                ): \Foo\Bar { }
                 function (): ?string { };
-            ',
-            '<?php
+                PHP,
+            <<<'PHP'
+                <?php
                 function (): void
                 {};
                 function foo(
-                ): \\Foo\\Bar    {    }
+                ): \Foo\Bar    {    }
                 function (): ?string {
                 };
-            ',
+                PHP,
         ];
 
         yield 'every token in separate line' => [
-            '<?php
+            <<<'PHP'
+                <?php
                 function
                 (
                 )
                 :
                 void { };
-            ',
-            '<?php
+                PHP,
+            <<<'PHP'
+                <?php
                 function
                 (
                 )
@@ -174,11 +184,12 @@ final class SingleLineEmptyBodyTest extends FixerTestCase
                 void
                 {
                 };
-            ',
+                PHP,
         ];
 
         yield 'comments before body' => [
-            '<?php
+            <<<'PHP'
+                <?php
                 function ()
                 // foo
                 { };
@@ -193,8 +204,9 @@ final class SingleLineEmptyBodyTest extends FixerTestCase
                 /** foo */
                 /** bar */
                 { };
-            ',
-            '<?php
+                PHP,
+            <<<'PHP'
+                <?php
                 function ()
                 // foo
                 {
@@ -212,29 +224,35 @@ final class SingleLineEmptyBodyTest extends FixerTestCase
                 /** foo */
                 /** bar */
                 {    };
-            ',
+                PHP,
         ];
 
         yield 'single-line arguments method' => [
-            '<?php class Foo
+            <<<'PHP'
+                <?php
+                class Foo
                 {
                     public function __construct(private int $x, private int $y)
                     {
                     }
                 }
-            ',
+                PHP,
         ];
 
         yield 'multi-line arguments method' => [
-            '<?php class Foo
+            <<<'PHP'
+                <?php
+                class Foo
                 {
                     public function __construct(
                         private int $x,
                         private int $y,
                     ) { }
                 }
-            ',
-            '<?php class Foo
+                PHP,
+            <<<'PHP'
+                <?php
+                class Foo
                 {
                     public function __construct(
                         private int $x,
@@ -242,29 +260,32 @@ final class SingleLineEmptyBodyTest extends FixerTestCase
                     ) {
                     }
                 }
-            ',
+                PHP,
         ];
 
         yield 'single-line arguments function' => [
-            '<?php
+            <<<'PHP'
+                <?php
                 function foo(int $foo)
                 {
                 }
-            ',
+                PHP,
         ];
 
         yield 'multi-line arguments function' => [
-            '<?php
+            <<<'PHP'
+                <?php
                 function foo(
                     int $foo,
                 ) { }
-            ',
-            '<?php
+                PHP,
+            <<<'PHP'
+                <?php
                 function foo(
                     int $foo,
                 ) {
                 }
-            ',
+                PHP,
         ];
     }
 }
