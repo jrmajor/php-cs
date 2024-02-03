@@ -43,6 +43,7 @@ return [
     'encoding' => true,
     'no_multiple_statements_per_line' => true,
     'no_trailing_comma_in_singleline' => true,
+    'numeric_literal_separator' => false,
     'octal_notation' => true,
     'single_line_empty_body' => false,
 
@@ -216,6 +217,7 @@ return [
     'phpdoc_indent' => true,
     'phpdoc_inline_tag_normalizer' => true,
     'phpdoc_line_span' => ['const' => 'single', 'property' => 'single'],
+    'phpdoc_list_type' => StaticAnalysis,
     'phpdoc_no_access' => true,
     'phpdoc_no_alias_tag' => [
         'replacements' => ['type' => 'var', 'link' => 'see'],
@@ -263,7 +265,11 @@ return [
     // String Notation
     'escape_implicit_backslashes' => ['single_quoted' => true],
     'explicit_string_variable' => true,
+    'heredoc_closing_marker' => [
+        'reserved_closing_markers' => ['BLADE', 'FTL', 'JSON', 'PHP', 'SQL', 'XML', 'YAML'],
+    ],
     'heredoc_to_nowdoc' => true,
+    'multiline_string_to_heredoc' => true,
     'no_binary_string' => true,
     'simple_to_complex_string_variable' => true,
     'single_quote' => true,
