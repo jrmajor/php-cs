@@ -263,7 +263,6 @@ return [
     'space_after_semicolon' => ['remove_in_empty_for_expressions' => true],
 
     // String Notation
-    'escape_implicit_backslashes' => ['single_quoted' => true],
     'explicit_string_variable' => true,
     'heredoc_closing_marker' => [
         'reserved_closing_markers' => ['BLADE', 'FTL', 'JSON', 'PHP', 'SQL', 'XML', 'YAML'],
@@ -273,6 +272,7 @@ return [
     'no_binary_string' => true,
     'simple_to_complex_string_variable' => true,
     'single_quote' => true,
+    'string_implicit_backslashes' => ['single_quoted' => 'escape'],
 
     // Whitespace
     'array_indentation' => true,
