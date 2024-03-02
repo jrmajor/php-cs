@@ -1,0 +1,199 @@
+name: CI
+
+on:
+  push:
+    branches-ignore: [master]
+
+jobs:
+  tests:
+    name: Tests / PHP ${{ matrix.php }}, ${{ matrix.stability }}
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['8.1', '8.2', '8.3']
+        stability: [prefer-lowest, prefer-stable]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+
+      - name: Get Composer cache directory path
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: composer-${{ hashFiles('composer.lock') }}
+          restore-keys: composer-
+
+      - name: Install Composer dependencies
+        run: composer update --${{ matrix.stability }}
+
+      - name: Execute tests
+        run: vendor/bin/phpunit
+
+  types:
+    name: Types / PHP ${{ matrix.php }}
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['8.1', '8.3']
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+
+      - name: Get Composer cache directory path
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: composer-${{ hashFiles('composer.lock') }}
+          restore-keys: composer-
+
+      - name: PHPStan cache
+        uses: actions/cache@v4
+        with:
+          path: .cache/phpstan
+          key: phpstan-${{ github.sha }}
+          restore-keys: phpstan-
+
+      - name: Install Composer dependencies
+        run: composer install
+
+      - name: Run PHPStan
+        run: vendor/bin/phpstan analyze --no-progress --no-interaction
+
+  style:
+    name: Style
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          coverage: none
+
+      - name: Get Composer cache directory path
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: composer-${{ hashFiles('composer.lock') }}
+          restore-keys: composer-
+
+      - name: PHP-CS-Fixer cache
+        uses: actions/cache@v4
+        with:
+          path: .cache/.php-cs-fixer.cache
+          key: php-cs-fixer-${{ github.sha }}
+          restore-keys: php-cs-fixer-
+
+      - name: Install Composer dependencies
+        run: composer install
+
+      - name: Run PHP-CS-Fixer
+        run: vendor/bin/php-cs-fixer fix --dry-run --diff --no-interaction
+
+  integration:
+    name: Integration / ${{ matrix.project }}
+
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project:
+          - arbor
+          - bajki-muza
+          - fluent-php
+          - laravel-fluent
+          - pluralrules
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          path: php-cs
+
+      - name: Checkout the other repo
+        uses: actions/checkout@v4
+        with:
+          repository: jrmajor/${{ matrix.project }}
+          path: integration
+
+      - name: Get PHP version
+        id: php-version
+        uses: actions/github-script@v7
+        with:
+          script: | 
+            const fs = require('fs');
+
+            const encoded = fs.readFileSync('integration/composer.json', 'utf8');
+            const decoded = JSON.parse(encoded);
+
+            return decoded.require.php.match(/^[~^]*(\d\.\d)/)[1];
+          result-encoding: string
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ steps.php-version.outputs.result }}
+          coverage: none
+        env:
+          GITHUB_TOKEN: ${{ secrets.COMPOSER_GITHUB_TOKEN }}
+
+      - name: Get Composer cache directory path
+        id: composer-cache
+        working-directory: integration
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: composer-${{ matrix.project }}-${{ hashFiles('integration/composer.lock') }}
+          restore-keys: |
+            composer-${{ matrix.project }}-
+            composer-
+
+      - name: Install Composer dependencies
+        working-directory: integration
+        run: |
+          sed -i 's+"minimum-stability": "stable"+"minimum-stability": "dev"+g' composer.json
+          composer config repositories.php-cs path ../php-cs
+          composer remove --dev orchestra/testbench --no-update --unused || true
+          composer remove --dev phpunit/phpunit --no-update --unused || true
+          composer remove --dev sebastian/diff --no-update --unused || true
+          composer require --dev jrmajor/cs:* --with-all-dependencies
+
+      - name: Run PHP-CS-Fixer
+        continue-on-error: true
+        working-directory: integration
+        run: vendor/bin/php-cs-fixer fix --dry-run --diff --no-interaction
