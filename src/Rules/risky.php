@@ -83,6 +83,9 @@ return [
     'long_to_shorthand_operator' => true,
     'ternary_to_elvis_operator' => true,
 
+    // PHPDoc
+    'phpdoc_array_type' => true,
+
     // Strict
     'declare_strict_types' => false,
     'strict_comparison' => StaticAnalysis,
