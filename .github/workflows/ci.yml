@@ -186,11 +186,8 @@ jobs:
       - name: Install Composer dependencies
         working-directory: integration
         run: |
-          sed -i 's+"minimum-stability": "stable"+"minimum-stability": "dev"+g' composer.json
+          composer config minimum-stability dev
           composer config repositories.php-cs path ../php-cs
-          composer remove --dev orchestra/testbench --no-update --unused || true
-          composer remove --dev phpunit/phpunit --no-update --unused || true
-          composer remove --dev sebastian/diff --no-update --unused || true
           composer require --dev jrmajor/cs:* --with-all-dependencies
 
       - name: Run PHP-CS-Fixer
