@@ -187,6 +187,11 @@ jobs:
             composer-${{ matrix.project }}-
             composer-
 
+      - name: Run Composer diagnostics
+        continue-on-error: true
+        working-directory: integration
+        run: composer diagnose
+
       - name: Install Composer dependencies
         working-directory: integration
         run: |
