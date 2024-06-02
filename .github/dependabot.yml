@@ -7,7 +7,13 @@ updates:
       interval: monthly
     allow:
       - dependency-type: development
+      - dependency-name: friendsofphp/php-cs-fixer
+      - dependency-name: kubawerlos/php-cs-fixer-custom-fixers
     groups:
+      php-cs-fixer:
+        patterns:
+          - friendsofphp/php-cs-fixer
+          - kubawerlos/php-cs-fixer-custom-fixers
       composer:
         update-types: [minor, patch]
     versioning-strategy: increase
