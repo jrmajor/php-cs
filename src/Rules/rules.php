@@ -37,6 +37,13 @@ return [
 
     // Attribute Notation
     'attribute_empty_parentheses' => true,
+    'ordered_attributes' => [
+        'sort_algorithm' => 'custom',
+        'order' => [
+            \PHPUnit\Framework\Attributes\DataProvider::class,
+            \PHPUnit\Framework\Attributes\TestDox::class,
+        ],
+    ],
 
     // Basic
     'braces_position' => true,
@@ -194,6 +201,7 @@ return [
     'no_closing_tag' => true,
 
     // PHPUnit
+    'php_unit_attributes' => true,
     'php_unit_fqcn_annotation' => true,
     'php_unit_internal_class' => false,
     'php_unit_size_class' => false,
