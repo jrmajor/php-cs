@@ -18,7 +18,7 @@
         "php-cs-fixer/phpunit-constraint-isidenticalstring": "^1.5",
         "phpstan/phpstan": "^1.11",
         "phpstan/phpstan-phpunit": "^1.4",
-        "phpunit/phpunit": "^11.1"
+        "phpunit/phpunit": "^11.2"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
