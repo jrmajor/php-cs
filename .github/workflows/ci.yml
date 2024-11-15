@@ -197,7 +197,8 @@ jobs:
         run: |
           composer config minimum-stability dev
           composer config repositories.php-cs path ../php-cs
-          composer require --dev jrmajor/cs:* --with-all-dependencies
+          composer remove spatie/laravel-activitylog --no-scripts
+          composer require --dev jrmajor/cs:* --with-all-dependencies --no-scripts
 
       - name: Run PHP-CS-Fixer
         continue-on-error: true
