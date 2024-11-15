@@ -173,6 +173,7 @@ abstract class FixerTestCase extends TestCase
 
     private function getTestFile(): SplFileInfo
     {
+        /** @var array<string, SplFileInfo> $files */
         static $files = [];
 
         return $files[__FILE__] ??= new SplFileInfo(__FILE__);
@@ -191,6 +192,7 @@ abstract class FixerTestCase extends TestCase
 
     private function getLinter(): Linter\LinterInterface
     {
+        /** @var ?Linter\Linter $linter */
         static $linter = null;
 
         return $linter ??= new Linter\Linter();
