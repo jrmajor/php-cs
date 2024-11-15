@@ -11,14 +11,14 @@
     "homepage": "https://github.com/jrmajor/php-cs",
     "require": {
         "php": "8.2 - 8.3",
-        "friendsofphp/php-cs-fixer": "^3.58",
-        "kubawerlos/php-cs-fixer-custom-fixers": "^3.21"
+        "friendsofphp/php-cs-fixer": "^3.64",
+        "kubawerlos/php-cs-fixer-custom-fixers": "^3.22"
     },
     "require-dev": {
         "php-cs-fixer/phpunit-constraint-isidenticalstring": "^1.5",
         "phpstan/phpstan": "^1.11",
         "phpstan/phpstan-phpunit": "^1.4",
-        "phpunit/phpunit": "^11.1"
+        "phpunit/phpunit": "^11.4"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
