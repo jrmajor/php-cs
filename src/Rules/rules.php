@@ -126,7 +126,7 @@ return [
     'switch_continue_to_break' => true,
     'trailing_comma_in_multiline' => [
         'after_heredoc' => true,
-        'elements' => ['arrays', 'arguments', 'parameters', 'match'],
+        'elements' => ['arguments', 'array_destructuring', 'arrays', 'match', 'parameters'],
     ],
     'yoda_style' => ['equal' => false, 'identical' => false, 'less_and_greater' => false],
 
