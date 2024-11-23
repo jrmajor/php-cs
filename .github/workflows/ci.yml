@@ -4,14 +4,18 @@ on:
   push:
     branches-ignore: [master]
 
+env:
+  PHP_LOWEST: '8.2'
+  PHP_LATEST: '8.4'
+
 jobs:
   tests:
-    name: Tests / PHP ${{ matrix.php }}, ${{ matrix.stability }}
+    name: Tests / ${{ matrix.php }} PHP, ${{ matrix.stability }}
 
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php: ['8.2', '8.3', '8.4']
+        php: ['lowest', 'latest']
         stability: [prefer-lowest, prefer-stable]
 
     steps:
@@ -21,7 +25,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php }}
+          php-version: ${{ matrix.php == 'lowest' && env.PHP_LOWEST || env.PHP_LATEST }}
           coverage: none
 
       - name: Get Composer cache directory path
@@ -42,15 +46,15 @@ jobs:
         run: vendor/bin/phpunit
 
   types:
-    name: Types / PHP ${{ matrix.php }}
+    name: Types / ${{ matrix.php }} PHP
 
     runs-on: ubuntu-latest
     strategy:
       matrix:
         include:
-          - php: '8.2'
+          - php: lowest
             stability: prefer-lowest
-          - php: '8.4'
+          - php: latest
             stability: prefer-stable
 
     steps:
@@ -60,7 +64,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php }}
+          php-version: ${{ matrix.php == 'lowest' && env.PHP_LOWEST || env.PHP_LATEST }}
           coverage: none
 
       - name: Get Composer cache directory path
@@ -99,7 +103,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'
+          php-version: ${{ env.PHP_LOWEST }}
           coverage: none
 
       - name: Get Composer cache directory path
