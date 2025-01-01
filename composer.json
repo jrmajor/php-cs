@@ -16,9 +16,9 @@
     },
     "require-dev": {
         "php-cs-fixer/phpunit-constraint-isidenticalstring": "^1.5",
-        "phpstan/phpstan": "^2.0",
+        "phpstan/phpstan": "^2.1",
         "phpstan/phpstan-phpunit": "^2.0",
-        "phpunit/phpunit": "^11.4"
+        "phpunit/phpunit": "^11.5"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
