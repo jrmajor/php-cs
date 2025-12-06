@@ -40,6 +40,7 @@ return [
     'phpdoc_readonly_class_comment_to_keyword' => StaticAnalysis,
     // Risky when using dynamic calls like get_called_class() or late static binding.
     'self_accessor' => true,
+    'static_private_method' => false,
 
     // Class Usage
     'date_time_immutable' => StaticAnalysis,
@@ -58,6 +59,7 @@ return [
     'implode_call' => true,
     'native_function_invocation' => false,
     'no_unreachable_default_argument_value' => legacy(),
+    'no_useless_printf' => true,
     'no_useless_sprintf' => true,
     'phpdoc_to_param_type' => StaticAnalysis,
     'phpdoc_to_property_type' => StaticAnalysis,

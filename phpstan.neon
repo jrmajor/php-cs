@@ -4,8 +4,19 @@ parameters:
         - src
         - tests
     ignoreErrors:
-        - '#^Cannot call method \w+\(\) on PhpCsFixer\\Tokenizer\\Token\|null\.$#'
-        - '#expects .?callable\(PhpCsFixer\\Tokenizer\\Token\|null\).+, Closure\(PhpCsFixer\\Tokenizer\\Token\).+ given\.$#'
+        -
+            path: tests/FixerTestCase.php
+            identifier: unset.possiblyHookedProperty
+            count: 1
+            reportUnmatched: false
+        -
+            path: tests/*
+            identifiers:
+                - instanceof.internalInterface
+                - method.internalClass
+                - method.internalInterface
+                - new.internalClass
+                - varTag.internalClass
     tmpDir: .cache/phpstan
 
 includes:

@@ -37,6 +37,7 @@ return [
 
     // Attribute Notation
     'attribute_empty_parentheses' => true,
+    'general_attribute_remove' => false,
     'ordered_attributes' => [
         'sort_algorithm' => 'custom',
         'order' => [
@@ -79,6 +80,7 @@ return [
         'space_before_parenthesis' => true,
         'inline_constructor_arguments' => false,
     ],
+    'modifier_keywords' => true,
     'no_blank_lines_after_class_opening' => true,
     'no_null_property_initialization' => true,
     'ordered_class_elements' => [
@@ -92,7 +94,7 @@ return [
     'self_static_accessor' => true,
     'single_class_element_per_statement' => true,
     'single_trait_insert_per_statement' => true,
-    'visibility_required' => true,
+    'stringable_for_to_string' => true,
 
     // Comment
     'header_comment' => false,
@@ -134,6 +136,7 @@ return [
     'function_declaration' => true,
     'lambda_not_used_import' => true,
     'method_argument_space' => ['on_multiline' => 'ignore', 'attribute_placement' => 'ignore'],
+    'multiline_promoted_properties' => true,
     'no_spaces_after_function_name' => true,
     'nullable_type_declaration_for_default_null_value' => true,
     'return_type_declaration' => true,
@@ -180,6 +183,7 @@ return [
     'binary_operator_spaces' => true,
     'concat_space' => ['spacing' => 'one'],
     'increment_style' => ['style' => 'post'],
+    'new_expression_parentheses' => true,
     'new_with_parentheses' => ['anonymous_class' => false],
     'no_space_around_double_colon' => true,
     'no_useless_concat_operator' => rare(),
@@ -202,6 +206,7 @@ return [
 
     // PHPUnit
     'php_unit_attributes' => true,
+    'php_unit_data_provider_method_order' => false,
     'php_unit_fqcn_annotation' => true,
     'php_unit_internal_class' => false,
     'php_unit_size_class' => false,
@@ -246,6 +251,7 @@ return [
     'phpdoc_single_line_var_spacing' => true,
     'phpdoc_summary' => true,
     'phpdoc_tag_casing' => true,
+    'phpdoc_tag_no_named_arguments' => false,
     'phpdoc_tag_type' => false,
     'phpdoc_to_comment' => false,
     'phpdoc_trim_consecutive_blank_line_separation' => true,
@@ -311,6 +317,6 @@ return [
     'statement_indentation' => [
         'stick_comment_to_next_continuous_control_statement' => true,
     ],
-    'type_declaration_spaces' => true,
+    'type_declaration_spaces' => ['elements' => ['constant', 'function', 'property']],
     'types_spaces' => true,
 ];

@@ -50,8 +50,6 @@ trait AssertTokens
 
             $expectedTokenKind = $expectedToken->isArray() ? $expectedToken->getId() : $expectedToken->getContent();
 
-            assert($expectedTokenKind !== null);
-
             static::assertTrue(
                 $inputTokens->isTokenKindFound($expectedTokenKind),
                 sprintf(

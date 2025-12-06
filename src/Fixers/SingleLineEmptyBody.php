@@ -63,6 +63,7 @@ final class SingleLineEmptyBody extends AbstractFixer
     private function shouldFixFunction(int $index, Tokens $tokens): bool
     {
         $nextIndex = $tokens->getNextMeaningfulToken($index);
+        assert($nextIndex !== null);
 
         if ($tokens[$nextIndex]->equals('(')) {
             return true;
@@ -116,6 +117,7 @@ final class SingleLineEmptyBody extends AbstractFixer
         }
 
         $closeBraceIndex = $tokens->getNextNonWhitespace($openBraceIndex);
+        assert($closeBraceIndex !== null);
 
         if (! $tokens[$closeBraceIndex]->equals('}')) {
             return;
@@ -124,6 +126,7 @@ final class SingleLineEmptyBody extends AbstractFixer
         $tokens->ensureWhitespaceAtIndex($openBraceIndex + 1, 0, ' ');
 
         $beforeOpenBraceIndex = $tokens->getPrevNonWhitespace($openBraceIndex);
+        assert($beforeOpenBraceIndex !== null);
 
         if (! $tokens[$beforeOpenBraceIndex]->isGivenKind([T_COMMENT, T_DOC_COMMENT])) {
             $tokens->ensureWhitespaceAtIndex($openBraceIndex - 1, 1, ' ');
