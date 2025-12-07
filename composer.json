@@ -10,7 +10,7 @@
     ],
     "homepage": "https://github.com/jrmajor/php-cs",
     "require": {
-        "php": "8.3 - 8.4",
+        "php": "8.3 - 8.5",
         "friendsofphp/php-cs-fixer": "^3.91",
         "kubawerlos/php-cs-fixer-custom-fixers": "^3.35"
     },

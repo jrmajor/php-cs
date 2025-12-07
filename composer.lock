@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "466c777e65760da5982024807288db16",
+    "content-hash": "c8ac978855fd1e4a0998b20e9be669be",
     "packages": [
         {
             "name": "clue/ndjson-react",
@@ -4490,7 +4490,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "8.3 - 8.4"
+        "php": "8.3 - 8.5"
     },
     "platform-dev": {},
     "plugin-api-version": "2.9.0"
