@@ -306,7 +306,7 @@ return [
     'no_extra_blank_lines' => [
         'tokens' => [
             'attribute', 'case', 'continue', 'curly_brace_block', 'default',
-            'extra', 'parenthesis_brace_block', 'switch', 'throw',
+            'extra', 'parenthesis_brace_block', 'square_brace_block', 'switch', 'throw',
         ],
     ],
     'no_spaces_around_offset' => true,
