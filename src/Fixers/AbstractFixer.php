@@ -12,6 +12,9 @@ abstract class AbstractFixer implements FixerInterface
         return false;
     }
 
+    /**
+     * @return non-empty-string
+     */
     public static function name(): string
     {
         $nameParts = explode('\\', static::class);

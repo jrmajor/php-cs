@@ -10,6 +10,12 @@ parameters:
             count: 1
             reportUnmatched: false
         -
+            # the parameter shows which options the rule would use
+            path: src/Rules/helpers.php
+            identifier: function.unusedParameter
+            count: 1
+            reportUnmatched: false
+        -
             path: tests/*
             identifiers:
                 - instanceof.internalInterface
