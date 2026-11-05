@@ -54,7 +54,7 @@ function version(float $version, $after = true, $before = false)
  *
  * @return false
  */
-function rare($options = true)
+function rare($options = true) // @phpstan-ignore function.unusedParameter (shows which options the rule would use)
 {
     return false;
 }
