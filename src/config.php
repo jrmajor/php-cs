@@ -13,7 +13,7 @@ use PhpCsFixerCustomFixers\Fixers as KubaFixers;
  */
 function config(Finder $finder, array $rules = []): ConfigInterface
 {
-    return (new Config('jrmajor/cs'))
+    return new Config('jrmajor/cs')
         ->setParallelConfig(ParallelConfigFactory::detect())
         ->registerCustomFixers(new Fixers())
         ->registerCustomFixers(new KubaFixers())
