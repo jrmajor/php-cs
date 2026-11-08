@@ -147,7 +147,7 @@ abstract class FixerTestCase extends TestCase
             static::assertSame(
                 count($tokens),
                 count(array_unique(array_map(
-                    static fn (Token $token): string => spl_object_hash($token),
+                    static fn (Token $token): int => spl_object_id($token),
                     $tokens->toArray(),
                 ))),
                 'Token items inside Tokens collection must be unique.',
