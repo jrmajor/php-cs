@@ -232,7 +232,16 @@ return [
     'phpdoc_annotation_without_dot' => false,
     'phpdoc_indent' => true,
     'phpdoc_inline_tag_normalizer' => true,
-    'phpdoc_line_span' => ['const' => 'single', 'property' => 'single'],
+    'phpdoc_line_span' => [
+        'class' => 'multi',
+        'trait_import' => 'single',
+        'const' => 'single',
+        'property' => 'single',
+        'case' => 'single',
+        'method' => 'multi',
+        'function' => 'multi',
+        'other' => null,
+    ],
     'phpdoc_list_type' => StaticAnalysis,
     'phpdoc_no_access' => true,
     'phpdoc_no_alias_tag' => [
