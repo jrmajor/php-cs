@@ -28,6 +28,8 @@ return [
     'final_class' => StaticAnalysis,
     'final_internal_class' => StaticAnalysis,
     'final_public_method_for_abstract_class' => StaticAnalysis,
+    // Risky when calling the old methods directly or having logic in __sleep() and __wakeup().
+    'modern_serialization_methods' => true,
     // Risky when old style constructor is overridden or overrides parent one.
     'no_php4_constructor' => legacy(),
     // Risky when child class overrides a private method on PHP < 8.0.

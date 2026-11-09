@@ -29,6 +29,7 @@ return [
     'array_syntax' => true,
     'no_multiline_whitespace_around_double_arrow' => true,
     'no_whitespace_before_comma_in_array' => true,
+    'no_whitespace_in_empty_array' => true,
     'normalize_index_brace' => true,
     'return_to_yield_from' => false,
     'trim_array_spaces' => true,
@@ -36,6 +37,7 @@ return [
     'yield_from_array_to_yields' => false,
 
     // Attribute Notation
+    'attribute_block_no_spaces' => true,
     'attribute_empty_parentheses' => true,
     'general_attribute_remove' => false,
     'ordered_attributes' => [
@@ -83,6 +85,7 @@ return [
     'modifier_keywords' => true,
     'no_blank_lines_after_class_opening' => true,
     'no_null_property_initialization' => true,
+    'no_redundant_readonly_property' => true,
     'ordered_class_elements' => [
         'order' => [
             'use_trait', 'case', 'constant', 'property',
@@ -235,6 +238,7 @@ return [
     'phpdoc_no_alias_tag' => [
         'replacements' => ['type' => 'var', 'link' => 'see'],
     ],
+    'phpdoc_no_duplicate_types' => true,
     'phpdoc_no_empty_return' => true,
     'phpdoc_no_package' => true,
     'phpdoc_no_useless_inheritdoc' => true,

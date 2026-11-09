@@ -5,7 +5,6 @@ namespace Major\CS;
 use PhpCsFixer\Config;
 use PhpCsFixer\ConfigInterface;
 use PhpCsFixer\Finder;
-use PhpCsFixer\Runner\Parallel\ParallelConfigFactory;
 use PhpCsFixerCustomFixers\Fixers as KubaFixers;
 
 /**
@@ -14,7 +13,6 @@ use PhpCsFixerCustomFixers\Fixers as KubaFixers;
 function config(Finder $finder, array $rules = []): ConfigInterface
 {
     return new Config('jrmajor/cs')
-        ->setParallelConfig(ParallelConfigFactory::detect())
         ->registerCustomFixers(new Fixers())
         ->registerCustomFixers(new KubaFixers())
         /** @phpstan-ignore argument.type */
