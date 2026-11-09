@@ -15,10 +15,10 @@
         "kubawerlos/php-cs-fixer-custom-fixers": "^3.35"
     },
     "require-dev": {
-        "php-cs-fixer/phpunit-constraint-isidenticalstring": "^1.5",
+        "php-cs-fixer/phpunit-constraint-isidenticalstring": "^1.8",
         "phpstan/phpstan": "^2.3.5",
         "phpstan/phpstan-phpunit": "^2.1",
-        "phpunit/phpunit": "^12.4"
+        "phpunit/phpunit": "^13.4"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
